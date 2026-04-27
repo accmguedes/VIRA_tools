@@ -2,16 +2,16 @@
   "_meta": {
     "app": "plano-2026",
     "version": 2,
-    "exportedAt": "2026-04-27T20:54:15.275Z",
-    "totalTasks": 237,
+    "exportedAt": "2026-04-27T20:55:50.100Z",
+    "totalTasks": 238,
     "totalFrentes": 3
   },
   "state": {
     "frentes": [
       {
         "id": "mkt",
-        "nome": "Marketings",
-        "open": false,
+        "nome": "Marketing",
+        "open": true,
         "blocos": [
           {
             "id": "m0",
@@ -544,7 +544,7 @@
           {
             "id": "m2",
             "nome": "4. Redes Sociais",
-            "open": false,
+            "open": true,
             "temas": [
               {
                 "nome": "Calendário",
@@ -664,6 +664,13 @@
                     "id": "t1777297346354",
                     "text": "Obter de endereço intagram  \"virafrangos_es\"",
                     "status": "doing",
+                    "quarter": null,
+                    "duration": 1
+                  },
+                  {
+                    "id": "t1777323342059",
+                    "text": "Rever documentos de politica de implementação de redes sociais",
+                    "status": "todo",
                     "quarter": null,
                     "duration": 1
                   }
