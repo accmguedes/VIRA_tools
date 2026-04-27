@@ -1,0 +1,4715 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Plano 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #1a1a1a;
+    --grey-900: #2e2e2e;
+    --grey-700: #595959;
+    --grey-500: #8c8c8c;
+    --grey-300: #d0d0d0;
+    --grey-200: #e8e8e8;
+    --grey-100: #f4f4f4;
+    --grey-50: #fafafa;
+    --white: #ffffff;
+    --done: #6a8a5e;
+    --doing: #c08a3e;
+    --blocked: #b85450;
+    --serif: 'Fraunces', Georgia, serif;
+    --sans: 'Inter', -apple-system, sans-serif;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html, body {
+    background: var(--white);
+    color: var(--ink);
+    font-family: var(--sans);
+    font-size: 14px;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  body {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 48px 56px 96px;
+  }
+
+  /* ---------- HEADER ---------- */
+  .header {
+    border-bottom: 1px solid var(--grey-200);
+    padding-bottom: 32px;
+    margin-bottom: 40px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 24px;
+  }
+
+  .title-block h1 {
+    font-family: var(--serif);
+    font-weight: 300;
+    font-size: 56px;
+    letter-spacing: -0.02em;
+    line-height: 1;
+    color: var(--ink);
+  }
+
+  .title-block .subtitle {
+    font-size: 13px;
+    color: var(--grey-700);
+    margin-top: 8px;
+    letter-spacing: 0.01em;
+  }
+
+  .actions {
+    display: flex;
+    gap: 8px;
+  }
+
+  .btn {
+    background: var(--white);
+    border: 1px solid var(--grey-300);
+    color: var(--ink);
+    font-family: var(--sans);
+    font-size: 12px;
+    font-weight: 500;
+    padding: 8px 14px;
+    cursor: pointer;
+    transition: all 0.15s ease;
+    letter-spacing: 0.02em;
+  }
+  .btn:hover { background: var(--ink); color: var(--white); border-color: var(--ink); }
+
+  .btn-ghost {
+    background: transparent;
+    border: none;
+    color: var(--grey-700);
+    font-size: 12px;
+    cursor: pointer;
+    padding: 4px 8px;
+    transition: color 0.15s;
+  }
+  .btn-ghost:hover { color: var(--ink); }
+
+  /* ---------- DASHBOARD ---------- */
+  .dashboard {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 1px;
+    background: var(--grey-200);
+    border: 1px solid var(--grey-200);
+    margin-bottom: 56px;
+  }
+
+  .stat {
+    background: var(--white);
+    padding: 24px 28px;
+  }
+
+  .stat-label {
+    font-size: 11px;
+    color: var(--grey-500);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 12px;
+  }
+
+  .stat-value {
+    font-family: var(--serif);
+    font-weight: 300;
+    font-size: 42px;
+    line-height: 1;
+    color: var(--ink);
+  }
+
+  .stat-detail {
+    font-size: 12px;
+    color: var(--grey-700);
+    margin-top: 8px;
+  }
+
+  .progress-bars {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .progress-row {
+    display: grid;
+    grid-template-columns: 80px 1fr 36px;
+    align-items: center;
+    gap: 12px;
+    font-size: 11px;
+  }
+
+  .progress-row .lbl { color: var(--grey-700); letter-spacing: 0.02em; }
+  .progress-row .num { color: var(--grey-500); text-align: right; font-variant-numeric: tabular-nums; }
+
+  .bar {
+    height: 4px;
+    background: var(--grey-100);
+    position: relative;
+  }
+  .bar-fill {
+    position: absolute; left: 0; top: 0; bottom: 0;
+    background: var(--ink);
+    transition: width 0.3s ease;
+  }
+
+  /* ---------- TIMELINE ---------- */
+  .timeline-section {
+    margin-bottom: 64px;
+  }
+
+  .timeline-section h2 {
+    font-family: var(--serif);
+    font-weight: 400;
+    font-size: 28px;
+    margin-bottom: 4px;
+    letter-spacing: -0.01em;
+  }
+
+  .section-note {
+    font-size: 12px;
+    color: var(--grey-500);
+    margin-bottom: 24px;
+  }
+
+  .gantt {
+    border: 1px solid var(--grey-200);
+    overflow: hidden;
+  }
+
+  .gantt-header {
+    display: grid;
+    grid-template-columns: 280px repeat(12, 1fr);
+    background: var(--grey-50);
+    border-bottom: 1px solid var(--grey-200);
+  }
+
+  .gantt-header > div {
+    padding: 10px 8px;
+    font-size: 10px;
+    color: var(--grey-700);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    text-align: center;
+    border-left: 1px solid var(--grey-200);
+  }
+  .gantt-header > div:first-child {
+    text-align: left;
+    border-left: none;
+    padding-left: 16px;
+  }
+
+  .gantt-quarter-mark {
+    background: var(--grey-100) !important;
+    color: var(--ink) !important;
+    font-weight: 500;
+  }
+
+  .gantt-row {
+    display: grid;
+    grid-template-columns: 280px repeat(12, 1fr);
+    border-bottom: 1px solid var(--grey-100);
+    min-height: 36px;
+    align-items: center;
+    position: relative;
+  }
+  .gantt-row:last-child { border-bottom: none; }
+  .gantt-row:hover { background: var(--grey-50); }
+
+  .gantt-label {
+    padding: 8px 16px;
+    font-size: 12px;
+    color: var(--ink);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    border-right: 1px solid var(--grey-200);
+  }
+
+  .gantt-label .gantt-frente {
+    display: inline-block;
+    font-size: 9px;
+    color: var(--grey-500);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-right: 6px;
+  }
+
+  .gantt-cells {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-column: 2 / -1;
+    height: 100%;
+    position: relative;
+  }
+
+  .gantt-cell {
+    border-left: 1px solid var(--grey-100);
+  }
+
+  .gantt-bar {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 18px;
+    background: var(--ink);
+    cursor: pointer;
+    transition: opacity 0.15s;
+    display: flex;
+    align-items: center;
+    padding: 0 8px;
+    color: var(--white);
+    font-size: 10px;
+    white-space: nowrap;
+    overflow: hidden;
+  }
+  .gantt-bar:hover { opacity: 0.8; }
+  .gantt-bar.done { background: var(--done); }
+  .gantt-bar.doing { background: var(--doing); }
+  .gantt-bar.blocked { background: var(--blocked); }
+
+  .gantt-empty {
+    padding: 24px;
+    text-align: center;
+    color: var(--grey-500);
+    font-size: 12px;
+    font-style: italic;
+  }
+
+  .gantt-add-hint {
+    padding: 12px 16px;
+    border-top: 1px solid var(--grey-200);
+    background: var(--grey-50);
+    font-size: 11px;
+    color: var(--grey-500);
+    text-align: center;
+    letter-spacing: 0.02em;
+  }
+
+  /* ---------- TASKS LIST ---------- */
+  .tasks-section h2 {
+    font-family: var(--serif);
+    font-weight: 400;
+    font-size: 28px;
+    margin-bottom: 4px;
+    letter-spacing: -0.01em;
+  }
+
+  .frente {
+    margin-bottom: 48px;
+  }
+
+  .frente-header {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    padding: 16px 0;
+    border-bottom: 2px solid var(--ink);
+    cursor: pointer;
+    user-select: none;
+    margin-bottom: 16px;
+  }
+
+  .frente-header h3 {
+    font-family: var(--serif);
+    font-weight: 400;
+    font-size: 32px;
+    letter-spacing: -0.01em;
+    color: var(--ink);
+  }
+
+  .frente-meta {
+    font-size: 11px;
+    color: var(--grey-500);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-variant-numeric: tabular-nums;
+  }
+
+  .bloco {
+    margin-bottom: 16px;
+    border-bottom: 1px solid var(--grey-200);
+  }
+
+  .bloco-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px 0;
+    cursor: pointer;
+    user-select: none;
+  }
+
+  .bloco-header:hover .bloco-title { color: var(--grey-900); }
+
+  .bloco-title {
+    font-family: var(--sans);
+    font-weight: 500;
+    font-size: 16px;
+    color: var(--ink);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .chevron {
+    width: 10px;
+    height: 10px;
+    border-right: 1.5px solid var(--grey-700);
+    border-bottom: 1.5px solid var(--grey-700);
+    transform: rotate(-45deg);
+    transition: transform 0.2s;
+    flex-shrink: 0;
+  }
+  .open > .bloco-header .chevron,
+  .open > .frente-header .chevron {
+    transform: rotate(45deg);
+  }
+
+  .bloco-meta {
+    font-size: 11px;
+    color: var(--grey-500);
+    font-variant-numeric: tabular-nums;
+  }
+
+  .bloco-body, .frente-body {
+    display: none;
+    padding: 0 0 20px 22px;
+  }
+  .open > .bloco-body, .open > .frente-body {
+    display: block;
+  }
+
+  .tema {
+    margin-bottom: 18px;
+  }
+
+  .tema-title {
+    font-family: var(--sans);
+    font-weight: 500;
+    font-size: 12px;
+    color: var(--grey-700);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 8px;
+  }
+
+  .task-list {
+    list-style: none;
+  }
+
+  .task {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 8px 4px;
+    border-bottom: 1px solid var(--grey-100);
+    transition: background 0.1s;
+  }
+  .task:hover { background: var(--grey-50); }
+  .task:hover .task-actions { opacity: 1; }
+
+  .task input[type="checkbox"] {
+    appearance: none;
+    -webkit-appearance: none;
+    width: 16px;
+    height: 16px;
+    border: 1.5px solid var(--grey-500);
+    background: var(--white);
+    cursor: pointer;
+    margin-top: 2px;
+    flex-shrink: 0;
+    position: relative;
+    transition: all 0.15s;
+  }
+  .task input[type="checkbox"]:hover { border-color: var(--ink); }
+  .task input[type="checkbox"]:checked {
+    background: var(--ink);
+    border-color: var(--ink);
+  }
+  .task input[type="checkbox"]:checked::after {
+    content: "";
+    position: absolute;
+    left: 4px;
+    top: 1px;
+    width: 4px;
+    height: 8px;
+    border-right: 1.5px solid var(--white);
+    border-bottom: 1.5px solid var(--white);
+    transform: rotate(45deg);
+  }
+
+  .task-text {
+    flex: 1;
+    font-size: 13px;
+    color: var(--ink);
+    line-height: 1.5;
+    cursor: text;
+    outline: none;
+    padding: 1px 0;
+    min-width: 0;
+  }
+  .task-text:focus {
+    background: var(--grey-100);
+    padding: 1px 4px;
+    margin: 0 -4px;
+  }
+  .task.done .task-text {
+    color: var(--grey-500);
+    text-decoration: line-through;
+  }
+
+  .task-actions {
+    display: flex;
+    gap: 4px;
+    opacity: 0;
+    transition: opacity 0.15s;
+    flex-shrink: 0;
+  }
+
+  .task-quarter {
+    font-size: 10px;
+    color: var(--grey-500);
+    background: var(--grey-100);
+    padding: 2px 6px;
+    border: none;
+    cursor: pointer;
+    font-family: var(--sans);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+  }
+  .task-quarter:hover { background: var(--ink); color: var(--white); }
+  .task-quarter.set { background: var(--ink); color: var(--white); }
+
+  .task-status {
+    font-size: 10px;
+    color: var(--grey-500);
+    background: var(--grey-100);
+    padding: 2px 6px;
+    border: none;
+    cursor: pointer;
+    font-family: var(--sans);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+  }
+  .task-status:hover { background: var(--grey-200); }
+  .task-status.doing { background: var(--doing); color: var(--white); }
+  .task-status.blocked { background: var(--blocked); color: var(--white); }
+
+  .task-delete {
+    background: transparent;
+    border: none;
+    color: var(--grey-500);
+    cursor: pointer;
+    font-size: 16px;
+    padding: 0 4px;
+    line-height: 1;
+  }
+  .task-delete:hover { color: var(--blocked); }
+
+  .add-task-btn {
+    background: transparent;
+    border: 1px dashed var(--grey-300);
+    color: var(--grey-700);
+    font-size: 11px;
+    padding: 6px 10px;
+    cursor: pointer;
+    margin-top: 8px;
+    font-family: var(--sans);
+    transition: all 0.15s;
+  }
+  .add-task-btn:hover {
+    border-color: var(--ink);
+    color: var(--ink);
+    border-style: solid;
+  }
+
+  /* Editable titles */
+  .editable {
+    outline: none;
+    transition: background 0.1s;
+  }
+  .editable:hover {
+    background: var(--grey-100);
+  }
+  .editable:focus {
+    background: var(--grey-100);
+    box-shadow: inset 0 -1px 0 var(--ink);
+  }
+
+  /* Section management buttons */
+  .section-actions {
+    display: flex;
+    gap: 6px;
+    align-items: center;
+    margin-left: 12px;
+    opacity: 0;
+    transition: opacity 0.15s;
+  }
+  .frente-header:hover .section-actions,
+  .bloco-header:hover .section-actions,
+  .tema-title:hover .section-actions {
+    opacity: 1;
+  }
+
+  .icon-btn {
+    background: transparent;
+    border: none;
+    color: var(--grey-500);
+    cursor: pointer;
+    font-size: 14px;
+    padding: 2px 6px;
+    line-height: 1;
+    font-family: var(--sans);
+  }
+  .icon-btn:hover { color: var(--ink); }
+  .icon-btn.danger:hover { color: var(--blocked); }
+
+  .add-block-btn, .add-tema-btn {
+    background: transparent;
+    border: 1px dashed var(--grey-300);
+    color: var(--grey-700);
+    font-size: 11px;
+    padding: 8px 14px;
+    cursor: pointer;
+    font-family: var(--sans);
+    transition: all 0.15s;
+    margin-top: 8px;
+    display: inline-block;
+  }
+  .add-block-btn:hover, .add-tema-btn:hover {
+    border-color: var(--ink);
+    color: var(--ink);
+    border-style: solid;
+  }
+
+  /* ---------- DRAG AND DROP ---------- */
+  .drag-handle {
+    cursor: grab;
+    color: var(--grey-300);
+    font-size: 14px;
+    padding: 0 6px;
+    user-select: none;
+    line-height: 1;
+    opacity: 0;
+    transition: opacity 0.15s, color 0.15s;
+    flex-shrink: 0;
+  }
+  .drag-handle:hover { color: var(--ink); }
+  .drag-handle:active { cursor: grabbing; }
+
+  .task:hover .drag-handle,
+  .frente-header:hover .drag-handle,
+  .bloco-header:hover .drag-handle,
+  .tema-title:hover .drag-handle {
+    opacity: 1;
+  }
+
+  .dragging {
+    opacity: 0.4;
+  }
+
+  .drop-target-before {
+    box-shadow: inset 0 2px 0 var(--ink);
+  }
+  .drop-target-after {
+    box-shadow: inset 0 -2px 0 var(--ink);
+  }
+
+  /* Move arrows for tasks (touch-friendly fallback) */
+  .move-arrows {
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+    opacity: 0;
+    transition: opacity 0.15s;
+    flex-shrink: 0;
+  }
+  .task:hover .move-arrows { opacity: 1; }
+
+  .move-arrow {
+    background: transparent;
+    border: none;
+    color: var(--grey-500);
+    cursor: pointer;
+    font-size: 9px;
+    padding: 0 4px;
+    line-height: 1;
+    height: 10px;
+  }
+  .move-arrow:hover { color: var(--ink); }
+  .move-arrow:disabled { opacity: 0.2; cursor: not-allowed; }
+
+  /* ---------- POPOVER for quarter selection ---------- */
+  .popover {
+    position: absolute;
+    background: var(--white);
+    border: 1px solid var(--ink);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+    z-index: 100;
+    padding: 4px;
+    display: none;
+  }
+  .popover.show { display: block; }
+  .popover button {
+    display: block;
+    width: 100%;
+    background: transparent;
+    border: none;
+    padding: 6px 12px;
+    font-size: 12px;
+    text-align: left;
+    cursor: pointer;
+    font-family: var(--sans);
+    color: var(--ink);
+  }
+  .popover button:hover { background: var(--grey-100); }
+
+  /* ---------- TOAST ---------- */
+  .toast {
+    position: fixed;
+    bottom: 24px;
+    left: 50%;
+    transform: translateX(-50%) translateY(100px);
+    background: var(--ink);
+    color: var(--white);
+    padding: 12px 20px;
+    font-size: 12px;
+    transition: transform 0.3s ease;
+    z-index: 200;
+    letter-spacing: 0.02em;
+  }
+  .toast.show { transform: translateX(-50%) translateY(0); }
+
+  /* ---------- HELP ---------- */
+  details.help {
+    border: 1px solid var(--grey-200);
+    padding: 12px 16px;
+    margin-bottom: 32px;
+    font-size: 12px;
+    color: var(--grey-700);
+  }
+  details.help summary {
+    cursor: pointer;
+    font-weight: 500;
+    color: var(--ink);
+    user-select: none;
+  }
+  details.help[open] summary { margin-bottom: 8px; }
+  details.help ul { padding-left: 20px; margin-top: 4px; }
+  details.help li { margin: 3px 0; }
+
+  /* Hidden file input */
+  input[type="file"] { display: none; }
+
+  /* Selection */
+  ::selection { background: var(--ink); color: var(--white); }
+
+  /* ---------- PUBLISH BUTTON ---------- */
+  .btn-publish {
+    background: var(--ink);
+    color: var(--white);
+    border: 1px solid var(--ink);
+    font-family: var(--sans);
+    font-size: 12px;
+    font-weight: 500;
+    padding: 8px 16px;
+    cursor: pointer;
+    transition: all 0.15s ease;
+    letter-spacing: 0.02em;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .btn-publish:hover { background: var(--grey-900); }
+  .btn-publish:disabled { opacity: 0.5; cursor: not-allowed; }
+  .btn-publish.publishing { opacity: 0.7; cursor: wait; }
+
+  .publish-status {
+    font-size: 11px;
+    color: var(--grey-500);
+    margin-right: 8px;
+    align-self: center;
+    white-space: nowrap;
+  }
+  .publish-status.success { color: var(--done); }
+  .publish-status.error { color: var(--blocked); }
+
+  /* ---------- MODAL ---------- */
+  .modal-backdrop {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.4);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 300;
+  }
+  .modal-backdrop.show { display: flex; }
+
+  .modal {
+    background: var(--white);
+    max-width: 520px;
+    width: calc(100% - 48px);
+    max-height: 85vh;
+    overflow-y: auto;
+    padding: 32px;
+    border: 1px solid var(--grey-200);
+  }
+
+  .modal h2 {
+    font-family: var(--serif);
+    font-weight: 400;
+    font-size: 28px;
+    color: var(--ink);
+    margin-bottom: 8px;
+    letter-spacing: -0.01em;
+  }
+
+  .modal p {
+    font-size: 13px;
+    color: var(--grey-700);
+    line-height: 1.6;
+    margin-bottom: 16px;
+  }
+
+  .modal label {
+    display: block;
+    font-size: 11px;
+    color: var(--grey-700);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 6px;
+    margin-top: 16px;
+  }
+
+  .modal input[type="text"],
+  .modal input[type="password"] {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid var(--grey-300);
+    background: var(--white);
+    font-family: var(--sans);
+    font-size: 13px;
+    color: var(--ink);
+    box-sizing: border-box;
+  }
+  .modal input:focus {
+    outline: none;
+    border-color: var(--ink);
+  }
+
+  .modal-actions {
+    display: flex;
+    gap: 8px;
+    justify-content: flex-end;
+    margin-top: 24px;
+    padding-top: 20px;
+    border-top: 1px solid var(--grey-200);
+  }
+
+  .modal-help {
+    background: var(--grey-50);
+    border-left: 3px solid var(--grey-300);
+    padding: 12px 16px;
+    margin-top: 16px;
+    font-size: 12px;
+    color: var(--grey-700);
+    line-height: 1.6;
+  }
+  .modal-help a {
+    color: var(--ink);
+    text-decoration: underline;
+  }
+  .modal-help code {
+    font-family: monospace;
+    background: var(--white);
+    padding: 1px 5px;
+    border: 1px solid var(--grey-200);
+    font-size: 11px;
+  }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="title-block">
+    <h1>Plano 2026</h1>
+    <div class="subtitle">Marketing · Sistema · Franchising</div>
+  </div>
+  <div class="actions">
+    <span class="publish-status" id="publishStatus"></span>
+    <button class="btn-publish" id="publishBtn" onclick="publishToGitHub()" title="Publicar para o GitHub">↑ Publicar</button>
+    <button class="btn" onclick="exportData()">Exportar</button>
+    <button class="btn" onclick="document.getElementById('importInput').click()">Importar</button>
+    <input type="file" id="importInput" accept=".json,application/json" onchange="importData(event)">
+    <button class="btn-ghost" onclick="recoverBackup()" title="Recuperar último backup automático (criado antes de cada importação)">↶ Backup</button>
+    <button class="btn-ghost" onclick="openSettingsModal()" title="Configurar publicação GitHub">⚙</button>
+    <button class="btn-ghost" onclick="if(confirm('Voltar ao estado inicial? Perdes todas as alterações.\n\nDica: exporta primeiro para teres backup.')){localStorage.removeItem('plano2026');location.reload();}">Reset</button>
+  </div>
+</div>
+
+<details class="help">
+  <summary>Como usar</summary>
+  <ul>
+    <li>Clica nos títulos das frentes e blocos para abrir/fechar.</li>
+    <li><strong>Tudo é editável:</strong> nome de frente, bloco, tema e tarefa. Clica no texto para editar, clica fora para guardar (ou tecla Enter).</li>
+    <li><strong>Reordenar (arrastar):</strong> passa o rato sobre qualquer item — aparece "⋮⋮" à esquerda. Agarra aí e arrasta para a posição desejada. Funciona para tarefas, temas, blocos e frentes inteiras. Linhas podem mover-se entre temas, blocos e frentes diferentes.</li>
+    <li><strong>Reordenar (setas):</strong> em alternativa ao arrasto, cada tarefa tem setas ▲ ▼ para mover uma posição de cada vez (útil em tablet/telemóvel).</li>
+    <li>Marca o checkbox para concluir; passa pelo botão de status para alternar entre Em curso / Bloqueado / Por fazer / Feito.</li>
+    <li>Clica em "+ trim" numa tarefa para a posicionar no Gantt — escolhe trimestre de início e duração.</li>
+    <li><strong>Adicionar:</strong> botões "+ tarefa", "+ tema", "+ bloco / fase", "+ frente" para acrescentar.</li>
+    <li><strong>Apagar:</strong> passa o rato sobre qualquer título — aparece um × à direita.</li>
+    <li><strong>↑ Publicar:</strong> envia o estado actual para o GitHub. A equipa vê a versão publicada (não a tua). Configura uma vez em ⚙.</li>
+    <li><strong>Exportar/Importar</strong> guardam e carregam o estado num ficheiro JSON. Faz isto para backup ou para passar entre computadores.</li>
+    <li><strong>Backup automático:</strong> sempre que importas um ficheiro, o estado actual é guardado num backup. Clica em "↶ Backup" para recuperar o último.</li>
+    <li>As alterações ficam guardadas neste browser. Se mudares de máquina, exporta antes.</li>
+  </ul>
+</details>
+
+<!-- DASHBOARD -->
+<div class="dashboard">
+  <div class="stat">
+    <div class="stat-label">Total</div>
+    <div class="stat-value" id="statTotal">0</div>
+    <div class="stat-detail" id="statDetail">— concluídas</div>
+  </div>
+  <div class="stat">
+    <div class="stat-label">Estado</div>
+    <div class="progress-bars" id="statusBars" style="margin-top: 8px;"></div>
+  </div>
+  <div class="stat">
+    <div class="stat-label">Por frente</div>
+    <div class="progress-bars" id="frenteBars" style="margin-top: 8px;"></div>
+  </div>
+</div>
+
+<!-- TIMELINE -->
+<div class="timeline-section">
+  <h2>Cronograma</h2>
+  <div class="section-note">Tarefas posicionadas no tempo. Clica em "+ trim" numa tarefa abaixo para a adicionar aqui.</div>
+  <div class="gantt" id="gantt"></div>
+</div>
+
+<!-- TASKS -->
+<div class="tasks-section">
+  <h2>Tarefas</h2>
+  <div class="section-note">Hierarquia: frente → bloco/fase → tema → tarefas.</div>
+  <div id="tasksContainer"></div>
+</div>
+
+<div class="popover" id="popover"></div>
+<div class="toast" id="toast"></div>
+
+<!-- Settings Modal -->
+<div class="modal-backdrop" id="settingsModal">
+  <div class="modal">
+    <h2>Publicação no GitHub</h2>
+    <p>Configura uma vez para poderes publicar o teu plano com um clique. Estes dados ficam guardados apenas no teu browser.</p>
+
+    <label for="githubOwner">Utilizador GitHub</label>
+    <input type="text" id="githubOwner" placeholder="ex: accmguedes">
+
+    <label for="githubRepo">Repositório</label>
+    <input type="text" id="githubRepo" placeholder="ex: VIRA_tools">
+
+    <label for="githubFile">Nome do ficheiro (no repositório)</label>
+    <input type="text" id="githubFile" placeholder="data.json" value="data.json">
+
+    <label for="githubBranch">Branch</label>
+    <input type="text" id="githubBranch" placeholder="main" value="main">
+
+    <label for="githubToken">Personal Access Token</label>
+    <input type="password" id="githubToken" placeholder="github_pat_...">
+
+    <div class="modal-help">
+      <strong>Como obter o token:</strong><br>
+      GitHub → Settings → Developer settings → Personal access tokens → Fine-grained tokens → Generate new token<br><br>
+      Configura: <strong>Repository access</strong> = Only select repositories (escolhe este) · <strong>Permissions</strong> = Contents: Read and write
+    </div>
+
+    <div class="modal-actions">
+      <button class="btn-ghost" onclick="closeSettingsModal()">Cancelar</button>
+      <button class="btn" onclick="testGitHubConnection()">Testar ligação</button>
+      <button class="btn-publish" onclick="saveGitHubSettings()">Guardar</button>
+    </div>
+  </div>
+</div>
+
+<script>
+// ============================================
+// DATA MODEL
+// ============================================
+const QUARTERS = ['Q2-26', 'Q3-26', 'Q4-26', 'Q1-27'];
+const QUARTER_MONTHS = { 'Q2-26': 0, 'Q3-26': 3, 'Q4-26': 6, 'Q1-27': 9 };
+const MONTHS = ['Abr','Mai','Jun','Jul','Ago','Set','Out','Nov','Dez','Jan','Fev','Mar'];
+
+const initialData = {
+  "frentes": [
+    {
+      "id": "mkt",
+      "nome": "Marketing",
+      "open": true,
+      "blocos": [
+        {
+          "id": "m0",
+          "nome": "Grandes Projectos",
+          "open": false,
+          "temas": [
+            {
+              "nome": "Rentabilidade Portugal",
+              "tarefas": [
+                {
+                  "id": "t1",
+                  "text": "Unidades com tráfego de turistas estrangeiros - Definir posicionamento e materiais de comunicação",
+                  "status": "todo",
+                  "quarter": null,
+                  "duration": 2
+                },
+                {
+                  "id": "t2",
+                  "text": "Foodtrucks e parcerias de revenda - Desenvolver imagem, materiais e narrativa de comunicação",
+                  "status": "todo",
+                  "quarter": null,
+                  "duration": 1
+                },
+                {
+                  "id": "t3",
+                  "text": "Cascais — definir e activar alavancas de comunicação local para campanha de crescimento - analisar ferramentas dentro do shopping / envolvência",
+                  "status": "todo",
+                  "quarter": null,
+                  "duration": 1
+                },
+                {
+                  "id": "t4",
+                  "text": "Algés — reforçar presença local da loja com foco em take-away e tráfego de proximidade - definir de embaixador local",
+                  "status": "todo",
+                  "quarter": null,
+                  "duration": 1
+                },
+                {
+                  "id": "t5",
+                  "text": "Oeiras — dar apoio de marketing ao processo de franchising desta unidade",
+                  "status": "todo",
+                  "quarter": null,
+                  "duration": 1
+                }
+              ]
+            },
+            {
+              "nome": "Expansão Nacional",
+              "tarefas": [
+                {
+                  "id": "t6",
+                  "text": "Criar conceito de comunicação para futura loja em local turístico",
+                  "status": "todo",
+                  "quarter": null,
+                  "duration": 1
+                },
+                {
+                  "id": "t7",
+                  "text": "Desenvolver identidade visual e modelo de comunicação para operação em carrinha",
+                  "status": "todo",
+                  "quarter": null,
+                  "duration": 1
+                },
+                {
+                  "id": "t8",
+                  "text": "Porto — preparar materiais e estratégia de marketing para entrada no mercado",
+                  "status": "todo",
+                  "quarter": null,
+                  "duration": 1
+                }
+              ]
+            },
+            {
+              "nome": "Internacionalização",
+              "tarefas": [
+                {
+                  "id": "t10",
+                  "text": "Médio Oriente — rever necessidade de adaptação de materiais à realidade local",
+                  "status": "todo",
+                  "quarter": null,
+                  "duration": 1
+                },
+                {
+                  "id": "t11",
+                  "text": "Aeroporto — fechar conceito de unidade e comunicação para tráfego internacional",
+                  "status": "todo",
+                  "quarter": null,
+                  "duration": 1
+                },
+                {
+                  "id": "t1777286070900",
+                  "text": "Flagshop - Revisão de regras de estilo para criação de Flagshop VIRA",
+                  "status": "todo",
+                  "quarter": null,
+                  "duration": 1
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "m3",
+          "nome": "1. VIRAgem 2026",
+          "open": false,
+          "temas": [
+            {
+              "nome": "Fase 2026a — Acções imediatas",
+              "tarefas": [
+                {
+                  "id": "t48",
+                  "text": "Imprimir as rectificações das ementas - a aguardar salgados / receita V!toque / sobremesas",
+                  "status": "blocked",
+                  "quarter": null,
+                  "duration": 1
+                },
+                {
+                  "id": "t49",
+                  "text": "Produzir standups actualizados",
+                  "status": "blocked",
+                  "quarter": null,
+                  "duration": 1
+                },
+                {
+                  "id": "t51",
+                  "text": "Maquetizar e produzir standups Piri Piri",
+                  "status": "todo",
+                  "quarter": null,
+                  "duration": 1
+                },
+                {
+                  "id": "t50",
+                  "text": "Fechar ementas das redes sociais e Google",
+                  "status": "todo",
+                  "quarter": null,
+                  "duration": 1
+                },
+                {
+                  "id": "t52",
+                  "text": "Rever imagens nos ecrãs das unidades - mudanças por horário, imagens mais explicitas em termos de indicação de menu, acompanhamentos",
+                  "status": "todo",
+                  "quarter": null,
+                  "duration": 1
+                },
+                {
+                  "id": "t53",
+                  "text": "Rever / actualizar conteúdos da VIRApp - fechar pacote Ana + imagens",
+                  "status": "todo",
+                  "quarter": null,
+                  "duration": 1
+                }
+              ]
+            },
+            {
+              "nome": "Fase 2026b — Vários Sabores",
+              "tarefas": [
+                {
+                  "id": "t54",
+                  "text": "Definir formato e calendário do lançamento das sobremesas Vários Sabores",
+                  "status": "todo",
+                  "quarter": null,
+                  "duration": 1
+                },
+                {
+                  "id": "t55",
+                  "text": "Definir modo de integração da marca Vários Sabores no universo VIRA",
+                  "status": "todo",
+                  "quarter": null,
+                  "duration": 1
+                },
+                {
+                  "id": "t56",
+                  "text": "Construir sinergias do lançamento com Glovo e influencers",
+                  "status": "todo",
+                  "quarter": null,
+                  "duration": 1
+                },
+                {
+                  "id": "t57",
+                  "text": "Fechar calendário detalhado de lançamento",
+                  "status": "todo",
+                  "quarter": null,
+                  "duration": 1
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "m5",
+          "nome": "2. Actualização de Unidades",
+          "open": false,
+          "temas": [
+            {
+              "nome": "Auditorias",
+              "tarefas": [
+                {
+                  "id": "t65",
+                  "text": "Auditoria visual completa Silva Carvalho + plano de actualização",
+                  "status": "done",
+                  "quarter": null,
+                  "duration": 1
+                },
+                {
+                  "id": "t66",
+                  "text": "Auditoria visual completa Atrium Saldanha + plano de actualização",
+                  "status": "done",
+                  "quarter": null,
+                  "duration": 1
+                },
+                {
+                  "id": "t67",
+                  "text": "Auditoria visual completa Algés + plano de actualização",
+                  "status": "done",
+                  "quarter": null,
+                  "duration": 1
+                },
+                {
+                  "id": "t68",
+                  "text": "Auditoria visual completa Cascais Shopping + plano de actualização",
+                  "status": "todo",
+                  "quarter": null,
+                  "duration": 1
+                },
+                {
+                  "id": "t69",
+                  "text": "Auditoria visual completa Oeiras Parque + plano de actualização",
+                  "status": "todo",
+                  "quarter": null,
+                  "duration": 1
+                }
+              ]
+            },
+            {
+              "nome": "Geral",
+              "tarefas": [
+                {
+                  "id": "t59",
+                  "text": "Concluir desenho final das caixas de luz - versão \"VIRA Frangos\"",
+                  "status": "todo",
+                  "quarter": null,
+                  "duration": 1
+                }
+              ]
+            },
+            {
+              "nome": "Colaboradores",
+              "tarefas": [
+                {
+                  "id": "t1777297557284",
+                  "text": "Fardas - rever de elementos - Catarina",
+                  "status": "todo",
+                  "quarter": null,
+                  "duration": 1
+                },
+                {
+                  "id": "t61",
+                  "text": "Avaliar necessidade de identificação de colaboradores - Catarina",
+                  "status": "todo",
+                  "quarter": null,
+                  "duration": 1
+                }
+              ]
+            },
+            {
+              "nome": "Equipamento",
+              "tarefas": [
+                {
+                  "id": "t58",
+                  "text": "Rever carimbos de sacos",
+                  "status": "todo",
+                  "quarter": null,
+                  "duration": 1
+                },
+                {
+                  "id": "t62",
+                  "text": "Rever / Actualizar conteúdo e imagem dos afixos de unidade",
+                  "status": "todo",
+                  "quarter": null,
+                  "duration": 1
+                },
+                {
+                  "id": "t63",
+                  "text": "Mudar tabuleiros para preto e adoptar toalhete kraft ?",
+                  "status": "todo",
+                  "quarter": null,
+                  "duration": 1
+                },
+                {
+                  "id": "t64",
+                  "text": "Rever pratos (passar a metal redondo branco - testes não convenceram) e dimensão",
+                  "status": "todo",
+                  "quarter": null,
+                  "duration": 1
+                }
+              ]
+            },
+            {
+              "nome": "Execução",
+              "tarefas": [
+                {
+                  "id": "t70",
+                  "text": "Orçamentar mudanças às unidades",
+                  "status": "todo",
+                  "quarter": null,
+                  "duration": 1
+                },
+                {
+                  "id": "t1777298206590",
+                  "text": "Calendarizar as intervenções com a equipa de Produção",
+                  "status": "todo",
+                  "quarter": null,
+                  "duration": 1
+                },
+                {
+                  "id": "t71",
+                  "text": "Coordenar execução com shoppings e Supervisor / Gerentes de loja",
+                  "status": "todo",
+                  "quarter": null,
+                  "duration": 1
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "m1",
+          "nome": "3. Campanhas Promocionais ( multicanal: unidade / virapp / delivery / take-away )",
+          "open": true,
+          "temas": [
+            {
+              "nome": "Bases de decisão",
+              "tarefas": [
+                {
+                  "id": "t12",
+                  "text": "Obter tabela de food costs actualizada",
+                  "status": "done",
+                  "quarter": null,
+                  "duration": 1
+                },
+                {
+                  "id": "t13",
+                  "text": "Obter e analisar mix de vendas por unidade, canal, dia e hora - trabalhar xls Vanessa",
+                  "status": "doing",
+                  "quarter": null,
+                  "duration": 1
+                },
+                {
+                  "id": "t14",
+                  "text": "Resumir e avaliar todas as campanhas Glovo desde o início da VIRAgem - dados só fiáveis a partir de Maio",
+                  "status": "blocked",
+                  "quarter": null,
+                  "duration": 1
+                },
+                {
+                  "id": "t15",
+                  "text": "Analisar resultados seccionados por mecânicas promocional ( produtos x tipologia de campanha )",
+                  "status": "todo",
+                  "quarter": null,
+                  "duration": 1
+                },
+                {
+                  "id": "t16",
+                  "text": "Rever utilização da VIRApp em 2026 - de modo a planear próximas actualizações",
+                  "status": "todo",
+                  "quarter": null,
+                  "duration": 1
+                }
+              ]
+            },
+            {
+              "nome": "Definição estratégica de promoções",
+              "tarefas": [
+                {
+                  "id": "t17",
+                  "text": "Identificar produtos e promoções-chave",
+                  "status": "todo",
+                  "quarter": null,
+                  "duration": 1
+                },
+                {
+                  "id": "t18",
+                  "text": "Definir objectivos prioritários por campanha",
+                  "status": "todo",
+                  "quarter": null,
+                  "duration": 1
+                },
+                {
+                  "id": "t19",
+                  "text": "Adaptar público-alvo por canal",
+                  "status": "todo",
+                  "quarter": null,
+                  "duration": 1
+                },
+                {
+                  "id": "t20",
+                  "text": "Definir nova arquitectura das 4 tipologias de campanha",
+                  "status": "todo",
+                  "quarter": null,
+                  "duration": 1
+                }
+              ]
+            },
+            {
+              "nome": "Estrutura e mecânicas",
+              "tarefas": [
+                {
+                  "id": "t21",
+                  "text": "Criar mecânicas simples e replicáveis",
+                  "status": "todo",
+                  "quarter": null,
+                  "duration": 1
+                },
+                {
+                  "id": "t22",
+                  "text": "Definir tipologias de duração das campanhas",
+                  "status": "todo",
+                  "quarter": null,
+                  "duration": 1
+                },
+                {
+                  "id": "t23",
+                  "text": "Garantir consistência visual entre categorias",
+                  "status": "todo",
+                  "quarter": null,
+                  "duration": 1
+                },
+                {
+                  "id": "t24",
+                  "text": "Actualizar peças físicas e digitais",
+                  "status": "todo",
+                  "quarter": null,
+                  "duration": 1
+                },
+                {
+                  "id": "t25",
+                  "text": "Fechar calendário, budget e recursos por campanha",
+                  "status": "todo",
+                  "quarter": null,
+                  "duration": 1
+                }
+              ]
+            },
+            {
+              "nome": "Avaliação",
+              "tarefas": [
+                {
+                  "id": "t26",
+                  "text": "Definir KPIs por campanha",
+                  "status": "todo",
+                  "quarter": null,
+                  "duration": 1
+                },
+                {
+                  "id": "t27",
+                  "text": "Fechar ferramenta padrão de análise pós-campanha",
+                  "status": "todo",
+                  "quarter": null,
+                  "duration": 1
+                },
+                {
+                  "id": "t28",
+                  "text": "Criar Guia de Campanhas Vencedoras",
+                  "status": "todo",
+                  "quarter": null,
+                  "duration": 1
+                }
+              ]
+            },
+            {
+              "nome": "Calendário e coordenação",
+              "tarefas": [
+                {
+                  "id": "t29",
+                  "text": "Construir calendário integrado entre canais",
+                  "status": "todo",
+                  "quarter": null,
+                  "duration": 1
+                },
+                {
+                  "id": "t30",
+                  "text": "Definir regras de exclusividade vs sobreposição",
+                  "status": "todo",
+                  "quarter": null,
+                  "duration": 1
+                },
+                {
+                  "id": "t31",
+                  "text": "Definir prioridade entre canais",
+                  "status": "todo",
+                  "quarter": null,
+                  "duration": 1
+                },
+                {
+                  "id": "t32",
+                  "text": "Garantir clareza de proposta de valor e urgência",
+                  "status": "todo",
+                  "quarter": null,
+                  "duration": 1
+                }
+              ]
+            },
+            {
+              "nome": "Operacional",
+              "tarefas": [
+                {
+                  "id": "t33",
+                  "text": "Comunicar calendário às equipas das unidades",
+                  "status": "todo",
+                  "quarter": null,
+                  "duration": 1
+                },
+                {
+                  "id": "t34",
+                  "text": "Garantir stock e preparação antecipada",
+                  "status": "todo",
+                  "quarter": null,
+                  "duration": 1
+                },
+                {
+                  "id": "t35",
+                  "text": "Monitorizar campanhas em tempo real",
+                  "status": "todo",
+                  "quarter": null,
+                  "duration": 1
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "m2",
+          "nome": "4. Redes Sociais",
+          "open": false,
+          "temas": [
+            {
+              "nome": "Calendário",
+              "tarefas": [
+                {
+                  "id": "t36",
+                  "text": "Definir de diferentes tipologias de comunicação em redes - Instagram: Promocional / Sazonal / Marca | Linkedin: Catering / Franchising",
+                  "status": "todo",
+                  "quarter": null,
+                  "duration": 1
+                }
+              ]
+            },
+            {
+              "nome": "LinkedIn",
+              "tarefas": [
+                {
+                  "id": "t37",
+                  "text": "Reposicionar o canal para B2B (catering e franchising) - definir lista de conteúdos",
+                  "status": "todo",
+                  "quarter": null,
+                  "duration": 1
+                }
+              ]
+            },
+            {
+              "nome": "Instagram e Facebook — wall com marca / stories em \"Destaques\"",
+              "tarefas": [
+                {
+                  "id": "t38",
+                  "text": "Criar secção \"Destaques\" no Instagram",
+                  "status": "todo",
+                  "quarter": null,
+                  "duration": 1
+                },
+                {
+                  "id": "t39",
+                  "text": "Definir capa visual do destaque",
+                  "status": "todo",
+                  "quarter": null,
+                  "duration": 1
+                },
+                {
+                  "id": "t40",
+                  "text": "Definir processo de adicionar e remover stories do destaque",
+                  "status": "todo",
+                  "quarter": null,
+                  "duration": 1
+                },
+                {
+                  "id": "t41",
+                  "text": "Comunicar aos clientes a existência do destaque",
+                  "status": "todo",
+                  "quarter": null,
+                  "duration": 1
+                }
+              ]
+            },
+            {
+              "nome": "Instagram e Facebook — Operação regular",
+              "tarefas": [
+                {
+                  "id": "t42",
+                  "text": "Definir budget pago por Susana e valor a associar por tipologia de campanha e fase",
+                  "status": "todo",
+                  "quarter": null,
+                  "duration": 1
+                },
+                {
+                  "id": "t43",
+                  "text": "Manter lógica de uso (posts permanentes vs stories temporárias)",
+                  "status": "todo",
+                  "quarter": null,
+                  "duration": 1
+                },
+                {
+                  "id": "t44",
+                  "text": "Sincronizar posts promocionais com semanas de influencers Glovo",
+                  "status": "todo",
+                  "quarter": null,
+                  "duration": 1
+                },
+                {
+                  "id": "t45",
+                  "text": "Implementar modelo buildup mensal até Influencer",
+                  "status": "todo",
+                  "quarter": null,
+                  "duration": 1
+                },
+                {
+                  "id": "t46",
+                  "text": "Produzir 1 campanha de Marca diferenciadora - possivelmente filme ou mecânica- por semestre",
+                  "status": "todo",
+                  "quarter": null,
+                  "duration": 1
+                },
+                {
+                  "id": "t1777286849521",
+                  "text": "Definição de Posts e Stories mais Promocionais - Apenas visiveis durante 15 dias - Mantem wall mais limpa e mais lifestyle",
+                  "status": "todo",
+                  "quarter": null,
+                  "duration": 1
+                },
+                {
+                  "id": "t1777286857168",
+                  "text": "Inserir posts sazonais no calendário anual",
+                  "status": "todo",
+                  "quarter": null,
+                  "duration": 1
+                }
+              ]
+            },
+            {
+              "nome": "Internacional",
+              "tarefas": [
+                {
+                  "id": "t1777297346354",
+                  "text": "Obter de endereço intagram  \"virafrangos_es\"",
+                  "status": "doing",
+                  "quarter": null,
+                  "duration": 1
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "m6",
+          "nome": "6. VIRApp",
+          "open": false,
+          "temas": [
+            {
+              "nome": "Estética e lógica",
+              "tarefas": [
+                {
+                  "id": "t72",
+                  "text": "Rever estética da app",
+                  "status": "todo",
+                  "quarter": null,
+                  "duration": 1
+                },
+                {
+                  "id": "t73",
+                  "text": "Rever sistema de promoções e lógica de pontos",
+                  "status": "todo",
+                  "quarter": null,
+                  "duration": 1
+                },
+                {
+                  "id": "t74",
+                  "text": "Criar novas lógicas de campanhas dentro da app",
+                  "status": "todo",
+                  "quarter": null,
+                  "duration": 1
+                }
+              ]
+            },
+            {
+              "nome": "Take-away",
+              "tarefas": [
+                {
+                  "id": "t75",
+                  "text": "Avaliar fluxo Glovo→take-away e ementa de take-away na app",
+                  "status": "todo",
+                  "quarter": null,
+                  "duration": 1
+                }
+              ]
+            },
+            {
+              "nome": "Adopção",
+              "tarefas": [
+                {
+                  "id": "t76",
+                  "text": "Lançar campanha em loja para converter clientes que ainda não usam a app",
+                  "status": "todo",
+                  "quarter": null,
+                  "duration": 1
+                },
+                {
+                  "id": "t77",
+                  "text": "Implementar sistema de Pontos Gold",
+                  "status": "todo",
+                  "quarter": null,
+                  "duration": 1
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "m7",
+          "nome": "7. Brand",
+          "open": false,
+          "temas": [
+            {
+              "nome": "Recursos",
+              "tarefas": [
+                {
+                  "id": "t78",
+                  "text": "Arrumar a biblioteca de recursos de marca",
+                  "status": "todo",
+                  "quarter": null,
+                  "duration": 1
+                },
+                {
+                  "id": "t79",
+                  "text": "Organizar galerias de imagem por utilização",
+                  "status": "todo",
+                  "quarter": null,
+                  "duration": 1
+                },
+                {
+                  "id": "t80",
+                  "text": "Construir biblioteca de bases de imagens AI",
+                  "status": "todo",
+                  "quarter": null,
+                  "duration": 1
+                },
+                {
+                  "id": "t81",
+                  "text": "Fazer backup do arquivo histórico de imagem",
+                  "status": "todo",
+                  "quarter": null,
+                  "duration": 1
+                }
+              ]
+            },
+            {
+              "nome": "Manuais",
+              "tarefas": [
+                {
+                  "id": "t82",
+                  "text": "Fechar manual de marca na versão essencial",
+                  "status": "todo",
+                  "quarter": null,
+                  "duration": 1
+                },
+                {
+                  "id": "t83",
+                  "text": "Actualizar manual conforme decisões de equipamento e packaging",
+                  "status": "todo",
+                  "quarter": null,
+                  "duration": 1
+                },
+                {
+                  "id": "t84",
+                  "text": "Verificar conteúdo essencial de expressão de marca",
+                  "status": "todo",
+                  "quarter": null,
+                  "duration": 1
+                },
+                {
+                  "id": "t85",
+                  "text": "Definir versões futuras do manual",
+                  "status": "todo",
+                  "quarter": null,
+                  "duration": 1
+                }
+              ]
+            },
+            {
+              "nome": "Partilha com franchisados",
+              "tarefas": [
+                {
+                  "id": "t86",
+                  "text": "Construir sistema de pastas de partilha por fase de franchising",
+                  "status": "todo",
+                  "quarter": null,
+                  "duration": 1
+                },
+                {
+                  "id": "t87",
+                  "text": "Definir fases de partilha",
+                  "status": "todo",
+                  "quarter": null,
+                  "duration": 1
+                },
+                {
+                  "id": "t88",
+                  "text": "Fechar arquivos partilháveis conforme cada fase",
+                  "status": "todo",
+                  "quarter": null,
+                  "duration": 1
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "m8",
+          "nome": "8. Apoio ao Franchising",
+          "open": false,
+          "temas": [
+            {
+              "nome": "Materiais de captação que necessitam de design mais detalhado",
+              "tarefas": [
+                {
+                  "id": "t89",
+                  "text": "Apresentação institucional de Franchising",
+                  "status": "todo",
+                  "quarter": null,
+                  "duration": 1
+                },
+                {
+                  "id": "t90",
+                  "text": "Teaser de Oportunidade",
+                  "status": "todo",
+                  "quarter": null,
+                  "duration": 1
+                },
+                {
+                  "id": "t91",
+                  "text": "One-pager da Marca",
+                  "status": "todo",
+                  "quarter": null,
+                  "duration": 1
+                },
+                {
+                  "id": "t92",
+                  "text": "FAQ de Franchising em versão visual",
+                  "status": "todo",
+                  "quarter": null,
+                  "duration": 1
+                }
+              ]
+            },
+            {
+              "nome": "Materiais de abertura",
+              "tarefas": [
+                {
+                  "id": "t93",
+                  "text": "Kit de marketing de lançamento da unidade",
+                  "status": "todo",
+                  "quarter": null,
+                  "duration": 1
+                },
+                {
+                  "id": "t94",
+                  "text": "Materiais do plano de inauguração",
+                  "status": "todo",
+                  "quarter": null,
+                  "duration": 1
+                }
+              ]
+            },
+            {
+              "nome": "Manuais",
+              "tarefas": [
+                {
+                  "id": "t95",
+                  "text": "Componente visual e diagramação do Manual Operacional",
+                  "status": "todo",
+                  "quarter": null,
+                  "duration": 1
+                },
+                {
+                  "id": "t96",
+                  "text": "Componente visual e diagramação do Manual de Obra",
+                  "status": "todo",
+                  "quarter": null,
+                  "duration": 1
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sis",
+      "nome": "Sistema",
+      "open": false,
+      "blocos": [
+        {
+          "id": "s1",
+          "nome": "Fase 1 — Definição da arquitectura",
+          "open": false,
+          "temas": [
+            {
+              "nome": "Arquitectura",
+              "tarefas": [
+                {
+                  "id": "t97",
+                  "text": "Refazer nova definição dos 3 níveis (Hub Central, Hub Franchisado, Hub Unidade)",
+                  "status": "todo",
+                  "quarter": null,
+                  "duration": 1
+                },
+                {
+                  "id": "t98",
+                  "text": "Fechar a ligação entre eles",
+                  "status": "todo",
+                  "quarter": null,
+                  "duration": 1
+                },
+                {
+                  "id": "t1777286131031",
+                  "text": "Mapear o que é global e o que é local",
+                  "status": "todo",
+                  "quarter": null,
+                  "duration": 1
+                },
+                {
+                  "id": "t1777286196116",
+                  "text": "Definição de Hubs consoante linguas e sua replicação",
+                  "status": "todo",
+                  "quarter": null,
+                  "duration": 1
+                }
+              ]
+            },
+            {
+              "nome": "Estrutura de dados",
+              "tarefas": [
+                {
+                  "id": "t100",
+                  "text": "Definir naming fixo das bibliotecas - funcionam para todo o mundo",
+                  "status": "todo",
+                  "quarter": null,
+                  "duration": 1
+                },
+                {
+                  "id": "t101",
+                  "text": "Definir estrutura padrão / template",
+                  "status": "todo",
+                  "quarter": null,
+                  "duration": 1
+                }
+              ]
+            },
+            {
+              "nome": "Regras de links",
+              "tarefas": [
+                {
+                  "id": "t102",
+                  "text": "Proibir links absolutos para lojas específicas",
+                  "status": "todo",
+                  "quarter": null,
+                  "duration": 1
+                },
+                {
+                  "id": "t103",
+                  "text": "Definir padrão de links",
+                  "status": "todo",
+                  "quarter": null,
+                  "duration": 1
+                },
+                {
+                  "id": "t104",
+                  "text": "Definir padrão de naming",
+                  "status": "todo",
+                  "quarter": null,
+                  "duration": 1
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "s2",
+          "nome": "Fase 2 — Hub Central",
+          "open": false,
+          "temas": [
+            {
+              "nome": "Site global",
+              "tarefas": [
+                {
+                  "id": "t105",
+                  "text": "Criar o site central no SharePoint",
+                  "status": "todo",
+                  "quarter": null,
+                  "duration": 1
+                },
+                {
+                  "id": "t106",
+                  "text": "Configurar navegação, branding e pesquisa",
+                  "status": "todo",
+                  "quarter": null,
+                  "duration": 1
+                }
+              ]
+            },
+            {
+              "nome": "Bibliotecas",
+              "tarefas": [
+                {
+                  "id": "t107",
+                  "text": "Criar bibliotecas centrais",
+                  "status": "todo",
+                  "quarter": null,
+                  "duration": 1
+                }
+              ]
+            },
+            {
+              "nome": "Páginas de conhecimento",
+              "tarefas": [
+                {
+                  "id": "t108",
+                  "text": "Construir página de Atendimento",
+                  "status": "todo",
+                  "quarter": null,
+                  "duration": 1
+                },
+                {
+                  "id": "t109",
+                  "text": "Construir página de Cozinha",
+                  "status": "todo",
+                  "quarter": null,
+                  "duration": 1
+                },
+                {
+                  "id": "t110",
+                  "text": "Construir página de HSA",
+                  "status": "todo",
+                  "quarter": null,
+                  "duration": 1
+                },
+                {
+                  "id": "t111",
+                  "text": "Construir página de Finance",
+                  "status": "todo",
+                  "quarter": null,
+                  "duration": 1
+                },
+                {
+                  "id": "t112",
+                  "text": "Construir página de Obra",
+                  "status": "todo",
+                  "quarter": null,
+                  "duration": 1
+                },
+                {
+                  "id": "t113",
+                  "text": "Construir página de Abertura de Loja",
+                  "status": "todo",
+                  "quarter": null,
+                  "duration": 1
+                }
+              ]
+            },
+            {
+              "nome": "Conteúdo para Copilot",
+              "tarefas": [
+                {
+                  "id": "t114",
+                  "text": "Limpar conteúdos duplicados e simplificar textos",
+                  "status": "todo",
+                  "quarter": null,
+                  "duration": 1
+                },
+                {
+                  "id": "t115",
+                  "text": "Aplicar metadata e títulos claros",
+                  "status": "todo",
+                  "quarter": null,
+                  "duration": 1
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "s3",
+          "nome": "Fase 3 — Hub Franchisado",
+          "open": false,
+          "temas": [
+            {
+              "nome": "Portal",
+              "tarefas": [
+                {
+                  "id": "t116",
+                  "text": "Construir Home com KPIs, Acções, Alertas e Copilot",
+                  "status": "todo",
+                  "quarter": null,
+                  "duration": 1
+                }
+              ]
+            },
+            {
+              "nome": "Blocos",
+              "tarefas": [
+                {
+                  "id": "t117",
+                  "text": "Construir blocos: Franchising, Aberturas, Finance, People, Marketing, Supply, Unit Performance",
+                  "status": "todo",
+                  "quarter": null,
+                  "duration": 1
+                }
+              ]
+            },
+            {
+              "nome": "Ferramentas",
+              "tarefas": [
+                {
+                  "id": "t118",
+                  "text": "Implementar dashboards em Power BI",
+                  "status": "todo",
+                  "quarter": null,
+                  "duration": 1
+                },
+                {
+                  "id": "t119",
+                  "text": "Criar lista \"Pipeline Franchising\"",
+                  "status": "todo",
+                  "quarter": null,
+                  "duration": 1
+                },
+                {
+                  "id": "t120",
+                  "text": "Criar lista \"Abertura de Lojas\"",
+                  "status": "todo",
+                  "quarter": null,
+                  "duration": 1
+                },
+                {
+                  "id": "t121",
+                  "text": "Construir bibliotecas para os 11 packs documentais",
+                  "status": "todo",
+                  "quarter": null,
+                  "duration": 1
+                }
+              ]
+            },
+            {
+              "nome": "Copilot",
+              "tarefas": [
+                {
+                  "id": "t122",
+                  "text": "Adicionar agente Copilot e configurar prompts",
+                  "status": "todo",
+                  "quarter": null,
+                  "duration": 1
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "s4",
+          "nome": "Fase 4 — Hub Unidade",
+          "open": false,
+          "temas": [
+            {
+              "nome": "Portal",
+              "tarefas": [
+                {
+                  "id": "t123",
+                  "text": "Construir Home com acções frequentes, Copilot e alertas",
+                  "status": "todo",
+                  "quarter": null,
+                  "duration": 1
+                }
+              ]
+            },
+            {
+              "nome": "Blocos",
+              "tarefas": [
+                {
+                  "id": "t124",
+                  "text": "Construir blocos: Atendimento, Cozinha, Limpeza, Mercadoria, People, Segurança",
+                  "status": "todo",
+                  "quarter": null,
+                  "duration": 1
+                }
+              ]
+            },
+            {
+              "nome": "Cards operacionais",
+              "tarefas": [
+                {
+                  "id": "t125",
+                  "text": "Criar cards (abrir horário, ver inventário, registar reclamação, ver auditoria)",
+                  "status": "todo",
+                  "quarter": null,
+                  "duration": 1
+                }
+              ]
+            },
+            {
+              "nome": "Dados locais",
+              "tarefas": [
+                {
+                  "id": "t126",
+                  "text": "Configurar webparts de Document Library",
+                  "status": "todo",
+                  "quarter": null,
+                  "duration": 1
+                },
+                {
+                  "id": "t127",
+                  "text": "Configurar Highlighted Content",
+                  "status": "todo",
+                  "quarter": null,
+                  "duration": 1
+                },
+                {
+                  "id": "t128",
+                  "text": "Criar listas locais",
+                  "status": "todo",
+                  "quarter": null,
+                  "duration": 1
+                }
+              ]
+            },
+            {
+              "nome": "Conhecimento global",
+              "tarefas": [
+                {
+                  "id": "t129",
+                  "text": "Configurar links para Hub Central",
+                  "status": "todo",
+                  "quarter": null,
+                  "duration": 1
+                }
+              ]
+            },
+            {
+              "nome": "Copilot",
+              "tarefas": [
+                {
+                  "id": "t130",
+                  "text": "Embed do agente Copilot e prompts",
+                  "status": "todo",
+                  "quarter": null,
+                  "duration": 1
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "s5",
+          "nome": "Fase 5 — Template de Loja",
+          "open": true,
+          "temas": [
+            {
+              "nome": "Site modelo",
+              "tarefas": [
+                {
+                  "id": "t131",
+                  "text": "Criar site base, associar ao Hub e configurar Home",
+                  "status": "todo",
+                  "quarter": null,
+                  "duration": 1
+                }
+              ]
+            },
+            {
+              "nome": "Estrutura de dados",
+              "tarefas": [
+                {
+                  "id": "t132",
+                  "text": "Criar bibliotecas, pastas vazias e listas base",
+                  "status": "todo",
+                  "quarter": null,
+                  "duration": 1
+                }
+              ]
+            },
+            {
+              "nome": "Webparts",
+              "tarefas": [
+                {
+                  "id": "t133",
+                  "text": "Configurar webparts dinâmicas",
+                  "status": "todo",
+                  "quarter": null,
+                  "duration": 1
+                }
+              ]
+            },
+            {
+              "nome": "Links",
+              "tarefas": [
+                {
+                  "id": "t134",
+                  "text": "Configurar links relativos",
+                  "status": "todo",
+                  "quarter": null,
+                  "duration": 1
+                }
+              ]
+            },
+            {
+              "nome": "Copilot",
+              "tarefas": [
+                {
+                  "id": "t135",
+                  "text": "Embed do agente Copilot e validar funcionamento",
+                  "status": "todo",
+                  "quarter": null,
+                  "duration": 1
+                }
+              ]
+            },
+            {
+              "nome": "Reutilização",
+              "tarefas": [
+                {
+                  "id": "t136",
+                  "text": "Exportar como Site Template e testar replicação",
+                  "status": "todo",
+                  "quarter": null,
+                  "duration": 1
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "s6",
+          "nome": "Fase 6 — Copilot Central",
+          "open": false,
+          "temas": [
+            {
+              "nome": "Configuração",
+              "tarefas": [
+                {
+                  "id": "t137",
+                  "text": "Criar Operations Assistant no Copilot Studio",
+                  "status": "todo",
+                  "quarter": null,
+                  "duration": 1
+                },
+                {
+                  "id": "t138",
+                  "text": "Configurar Hub Central como fonte",
+                  "status": "todo",
+                  "quarter": null,
+                  "duration": 1
+                },
+                {
+                  "id": "t139",
+                  "text": "Criar prompts para Abertura, Operação, HSA e Atendimento",
+                  "status": "todo",
+                  "quarter": null,
+                  "duration": 1
+                },
+                {
+                  "id": "t140",
+                  "text": "Integrar agente nos Hubs Franchisado, Unidade e Templates",
+                  "status": "todo",
+                  "quarter": null,
+                  "duration": 1
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "s7",
+          "nome": "Fase 7 — Processo de criação de loja",
+          "open": false,
+          "temas": [
+            {
+              "nome": "Implementação",
+              "tarefas": [
+                {
+                  "id": "t141",
+                  "text": "Criar checklist de criação",
+                  "status": "todo",
+                  "quarter": null,
+                  "duration": 1
+                },
+                {
+                  "id": "t142",
+                  "text": "Validar bibliotecas, listas e links",
+                  "status": "todo",
+                  "quarter": null,
+                  "duration": 1
+                },
+                {
+                  "id": "t143",
+                  "text": "Preencher dados locais iniciais",
+                  "status": "todo",
+                  "quarter": null,
+                  "duration": 1
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "s8",
+          "nome": "Fase 8 — UX",
+          "open": false,
+          "temas": [
+            {
+              "nome": "Regras",
+              "tarefas": [
+                {
+                  "id": "t144",
+                  "text": "Aplicar regras: 1 página principal, 1 nível profundidade, 5 cards por área",
+                  "status": "todo",
+                  "quarter": null,
+                  "duration": 1
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "s9",
+          "nome": "Fase 9 — Monitorização",
+          "open": false,
+          "temas": [
+            {
+              "nome": "Métricas",
+              "tarefas": [
+                {
+                  "id": "t145",
+                  "text": "Medir uso de páginas e ferramentas",
+                  "status": "todo",
+                  "quarter": null,
+                  "duration": 1
+                },
+                {
+                  "id": "t146",
+                  "text": "Identificar conteúdos não utilizados",
+                  "status": "todo",
+                  "quarter": null,
+                  "duration": 1
+                },
+                {
+                  "id": "t147",
+                  "text": "Ajustar Home e estrutura com base em dados",
+                  "status": "todo",
+                  "quarter": null,
+                  "duration": 1
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "fra",
+      "nome": "Franchising",
+      "open": false,
+      "blocos": [
+        {
+          "id": "f0",
+          "nome": "Fase 0 — Geração de Leads",
+          "open": false,
+          "temas": [
+            {
+              "nome": "Pack de Captação",
+              "tarefas": [
+                {
+                  "id": "t148",
+                  "text": "Produzir Apresentação de Franchising (deck institucional)",
+                  "status": "todo",
+                  "quarter": null,
+                  "duration": 1
+                },
+                {
+                  "id": "t149",
+                  "text": "Produzir Teaser de Franchising",
+                  "status": "todo",
+                  "quarter": null,
+                  "duration": 1
+                },
+                {
+                  "id": "t150",
+                  "text": "Produzir One-pager da Oportunidade",
+                  "status": "todo",
+                  "quarter": null,
+                  "duration": 1
+                },
+                {
+                  "id": "t151",
+                  "text": "Criar Formulário de Contacto Inicial",
+                  "status": "todo",
+                  "quarter": null,
+                  "duration": 1
+                },
+                {
+                  "id": "t152",
+                  "text": "Definir Perfil do Franchisado Ideal",
+                  "status": "todo",
+                  "quarter": null,
+                  "duration": 1
+                },
+                {
+                  "id": "t153",
+                  "text": "Produzir FAQ de Franchising",
+                  "status": "todo",
+                  "quarter": null,
+                  "duration": 1
+                },
+                {
+                  "id": "t154",
+                  "text": "Implementar CRM de Franchising",
+                  "status": "todo",
+                  "quarter": null,
+                  "duration": 1
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "f1",
+          "nome": "Fase 1 — Triagem Inicial",
+          "open": false,
+          "temas": [
+            {
+              "nome": "Pack de Pré-Qualificação",
+              "tarefas": [
+                {
+                  "id": "t155",
+                  "text": "Criar Formulário de Candidatura",
+                  "status": "todo",
+                  "quarter": null,
+                  "duration": 1
+                },
+                {
+                  "id": "t156",
+                  "text": "Criar Checklist de Elegibilidade",
+                  "status": "todo",
+                  "quarter": null,
+                  "duration": 1
+                },
+                {
+                  "id": "t157",
+                  "text": "Criar Matriz de Triagem",
+                  "status": "todo",
+                  "quarter": null,
+                  "duration": 1
+                },
+                {
+                  "id": "t158",
+                  "text": "Criar Scorecard do Candidato",
+                  "status": "todo",
+                  "quarter": null,
+                  "duration": 1
+                },
+                {
+                  "id": "t159",
+                  "text": "Criar Matriz de Red Flags",
+                  "status": "todo",
+                  "quarter": null,
+                  "duration": 1
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "f2",
+          "nome": "Fase 2 — Qualificação Comercial e NDA",
+          "open": false,
+          "temas": [
+            {
+              "nome": "Pack de Qualificação",
+              "tarefas": [
+                {
+                  "id": "t160",
+                  "text": "Produzir Acordo de Confidencialidade (NDA)",
+                  "status": "todo",
+                  "quarter": null,
+                  "duration": 1
+                },
+                {
+                  "id": "t161",
+                  "text": "Produzir E-mail Template de Envio",
+                  "status": "todo",
+                  "quarter": null,
+                  "duration": 1
+                },
+                {
+                  "id": "t162",
+                  "text": "Criar Registo Documental do Candidato",
+                  "status": "todo",
+                  "quarter": null,
+                  "duration": 1
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "f3",
+          "nome": "Fase 3 — Entrevistas",
+          "open": false,
+          "temas": [
+            {
+              "nome": "Pack de Avaliação",
+              "tarefas": [
+                {
+                  "id": "t163",
+                  "text": "Produzir Guião da 1.ª Entrevista",
+                  "status": "todo",
+                  "quarter": null,
+                  "duration": 1
+                },
+                {
+                  "id": "t164",
+                  "text": "Produzir Ficha de Avaliação de Entrevista",
+                  "status": "todo",
+                  "quarter": null,
+                  "duration": 1
+                },
+                {
+                  "id": "t165",
+                  "text": "Produzir Guião da 2.ª Entrevista",
+                  "status": "todo",
+                  "quarter": null,
+                  "duration": 1
+                },
+                {
+                  "id": "t166",
+                  "text": "Produzir Relatório Final do Candidato",
+                  "status": "todo",
+                  "quarter": null,
+                  "duration": 1
+                },
+                {
+                  "id": "t167",
+                  "text": "Produzir Perfil do Responsável Operacional",
+                  "status": "todo",
+                  "quarter": null,
+                  "duration": 1
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "f4",
+          "nome": "Fase 4 — Plano de Negócio e DD",
+          "open": false,
+          "temas": [
+            {
+              "nome": "Pack de Due Diligence",
+              "tarefas": [
+                {
+                  "id": "t168",
+                  "text": "Produzir Template de Plano de Negócio",
+                  "status": "todo",
+                  "quarter": null,
+                  "duration": 1
+                },
+                {
+                  "id": "t169",
+                  "text": "Produzir Modelo Financeiro",
+                  "status": "todo",
+                  "quarter": null,
+                  "duration": 1
+                },
+                {
+                  "id": "t170",
+                  "text": "Produzir Plano de Abertura a 5 Anos",
+                  "status": "todo",
+                  "quarter": null,
+                  "duration": 1
+                },
+                {
+                  "id": "t171",
+                  "text": "Produzir Plano de Reinvestimento (capex)",
+                  "status": "todo",
+                  "quarter": null,
+                  "duration": 1
+                },
+                {
+                  "id": "t172",
+                  "text": "Produzir Plano de Marketing (template)",
+                  "status": "todo",
+                  "quarter": null,
+                  "duration": 1
+                },
+                {
+                  "id": "t173",
+                  "text": "Produzir Plano Tecnológico",
+                  "status": "todo",
+                  "quarter": null,
+                  "duration": 1
+                },
+                {
+                  "id": "t174",
+                  "text": "Produzir Checklist de Due Diligence",
+                  "status": "todo",
+                  "quarter": null,
+                  "duration": 1
+                },
+                {
+                  "id": "t175",
+                  "text": "Produzir Relatório de Due Diligence",
+                  "status": "todo",
+                  "quarter": null,
+                  "duration": 1
+                },
+                {
+                  "id": "t176",
+                  "text": "Produzir Relatório de Visita à Empresa",
+                  "status": "todo",
+                  "quarter": null,
+                  "duration": 1
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "f5",
+          "nome": "Fase 5 — Aprovação e Contrato",
+          "open": false,
+          "temas": [
+            {
+              "nome": "Pack de Aprovação",
+              "tarefas": [
+                {
+                  "id": "t177",
+                  "text": "Produzir Memorando de Aprovação Interna",
+                  "status": "todo",
+                  "quarter": null,
+                  "duration": 1
+                },
+                {
+                  "id": "t178",
+                  "text": "Produzir Contrato de Franchising Condicionado",
+                  "status": "todo",
+                  "quarter": null,
+                  "duration": 1
+                },
+                {
+                  "id": "t179",
+                  "text": "Produzir Resumo Executivo do Contrato",
+                  "status": "todo",
+                  "quarter": null,
+                  "duration": 1
+                },
+                {
+                  "id": "t180",
+                  "text": "Produzir Tabela de Fees e Encargos",
+                  "status": "todo",
+                  "quarter": null,
+                  "duration": 1
+                },
+                {
+                  "id": "t181",
+                  "text": "Produzir Checklist de Condições Precedentes",
+                  "status": "todo",
+                  "quarter": null,
+                  "duration": 1
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "f6",
+          "nome": "Fase 6 — Formação",
+          "open": false,
+          "temas": [
+            {
+              "nome": "Pack de Formação",
+              "tarefas": [
+                {
+                  "id": "t182",
+                  "text": "Produzir Programa de Formação",
+                  "status": "todo",
+                  "quarter": null,
+                  "duration": 1
+                },
+                {
+                  "id": "t183",
+                  "text": "Produzir Plano Curricular",
+                  "status": "todo",
+                  "quarter": null,
+                  "duration": 1
+                },
+                {
+                  "id": "t184",
+                  "text": "Produzir Calendário de Formação",
+                  "status": "todo",
+                  "quarter": null,
+                  "duration": 1
+                },
+                {
+                  "id": "t185",
+                  "text": "Produzir Manual Operacional",
+                  "status": "todo",
+                  "quarter": null,
+                  "duration": 1
+                },
+                {
+                  "id": "t186",
+                  "text": "Produzir Relatório de Formação",
+                  "status": "todo",
+                  "quarter": null,
+                  "duration": 1
+                },
+                {
+                  "id": "t187",
+                  "text": "Produzir Grelha de Avaliação de Competências",
+                  "status": "todo",
+                  "quarter": null,
+                  "duration": 1
+                },
+                {
+                  "id": "t188",
+                  "text": "Produzir Certificação Final",
+                  "status": "todo",
+                  "quarter": null,
+                  "duration": 1
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "f7",
+          "nome": "Fase 7 — Abertura de Mercado",
+          "open": false,
+          "temas": [
+            {
+              "nome": "Pack de Abertura",
+              "tarefas": [
+                {
+                  "id": "t189",
+                  "text": "Produzir One-pager de Abertura de Mercado",
+                  "status": "todo",
+                  "quarter": null,
+                  "duration": 1
+                },
+                {
+                  "id": "t190",
+                  "text": "Produzir Plano de Projecto",
+                  "status": "todo",
+                  "quarter": null,
+                  "duration": 1
+                },
+                {
+                  "id": "t191",
+                  "text": "Produzir Perfil de Unidade",
+                  "status": "todo",
+                  "quarter": null,
+                  "duration": 1
+                },
+                {
+                  "id": "t192",
+                  "text": "Produzir Relatório de Selecção de Espaço",
+                  "status": "todo",
+                  "quarter": null,
+                  "duration": 1
+                },
+                {
+                  "id": "t193",
+                  "text": "Produzir Proposta de Ementa",
+                  "status": "todo",
+                  "quarter": null,
+                  "duration": 1
+                },
+                {
+                  "id": "t194",
+                  "text": "Produzir Relatório Final de Definição de Ementa",
+                  "status": "todo",
+                  "quarter": null,
+                  "duration": 1
+                },
+                {
+                  "id": "t195",
+                  "text": "Produzir Guia de Requisitos de Produto",
+                  "status": "todo",
+                  "quarter": null,
+                  "duration": 1
+                },
+                {
+                  "id": "t196",
+                  "text": "Produzir Guia de Equipamentos e Utensílios",
+                  "status": "todo",
+                  "quarter": null,
+                  "duration": 1
+                },
+                {
+                  "id": "t197",
+                  "text": "Produzir Checklist Documental de Fornecedores",
+                  "status": "todo",
+                  "quarter": null,
+                  "duration": 1
+                },
+                {
+                  "id": "t198",
+                  "text": "Produzir Questionário de Fornecedor",
+                  "status": "todo",
+                  "quarter": null,
+                  "duration": 1
+                },
+                {
+                  "id": "t199",
+                  "text": "Produzir Checklist de Auditoria a Fornecedores",
+                  "status": "todo",
+                  "quarter": null,
+                  "duration": 1
+                },
+                {
+                  "id": "t200",
+                  "text": "Produzir Relatório de Avaliação de Fornecedor",
+                  "status": "todo",
+                  "quarter": null,
+                  "duration": 1
+                },
+                {
+                  "id": "t201",
+                  "text": "Produzir Manual de Obra",
+                  "status": "todo",
+                  "quarter": null,
+                  "duration": 1
+                },
+                {
+                  "id": "t202",
+                  "text": "Produzir Guia de Implementação de Ferramentas",
+                  "status": "todo",
+                  "quarter": null,
+                  "duration": 1
+                },
+                {
+                  "id": "t203",
+                  "text": "Produzir Guia de Recrutamento",
+                  "status": "todo",
+                  "quarter": null,
+                  "duration": 1
+                },
+                {
+                  "id": "t204",
+                  "text": "Produzir Guião de Entrevista para contratação",
+                  "status": "todo",
+                  "quarter": null,
+                  "duration": 1
+                },
+                {
+                  "id": "t205",
+                  "text": "Produzir Plano de Formação da Equipa de Loja",
+                  "status": "todo",
+                  "quarter": null,
+                  "duration": 1
+                },
+                {
+                  "id": "t206",
+                  "text": "Produzir Guia de Requisitos de Serviços Externos",
+                  "status": "todo",
+                  "quarter": null,
+                  "duration": 1
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "f8",
+          "nome": "Fase 8 — Abertura da 1.ª Unidade",
+          "open": false,
+          "temas": [
+            {
+              "nome": "Pack de Abertura de Unidade",
+              "tarefas": [
+                {
+                  "id": "t207",
+                  "text": "Produzir Checklist de Pré-Abertura",
+                  "status": "todo",
+                  "quarter": null,
+                  "duration": 1
+                },
+                {
+                  "id": "t208",
+                  "text": "Produzir Plano de Soft Opening",
+                  "status": "todo",
+                  "quarter": null,
+                  "duration": 1
+                },
+                {
+                  "id": "t209",
+                  "text": "Produzir Plano de Inauguração",
+                  "status": "todo",
+                  "quarter": null,
+                  "duration": 1
+                },
+                {
+                  "id": "t210",
+                  "text": "Produzir Plano de Activação Local",
+                  "status": "todo",
+                  "quarter": null,
+                  "duration": 1
+                },
+                {
+                  "id": "t211",
+                  "text": "Produzir Plano de Start Team",
+                  "status": "todo",
+                  "quarter": null,
+                  "duration": 1
+                },
+                {
+                  "id": "t212",
+                  "text": "Produzir Cronograma de Abertura",
+                  "status": "todo",
+                  "quarter": null,
+                  "duration": 1
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "f9",
+          "nome": "Fase 9 — Gestão e Desenvolvimento",
+          "open": false,
+          "temas": [
+            {
+              "nome": "Pack de Gestão Operacional",
+              "tarefas": [
+                {
+                  "id": "t213",
+                  "text": "Produzir Dashboard de KPI",
+                  "status": "todo",
+                  "quarter": null,
+                  "duration": 1
+                },
+                {
+                  "id": "t214",
+                  "text": "Produzir Registo de Controlo Diário",
+                  "status": "todo",
+                  "quarter": null,
+                  "duration": 1
+                },
+                {
+                  "id": "t215",
+                  "text": "Produzir Registo de Desperdícios",
+                  "status": "todo",
+                  "quarter": null,
+                  "duration": 1
+                },
+                {
+                  "id": "t216",
+                  "text": "Produzir Registo de Inventário",
+                  "status": "todo",
+                  "quarter": null,
+                  "duration": 1
+                },
+                {
+                  "id": "t217",
+                  "text": "Produzir Mapa de Exploração (P&L)",
+                  "status": "todo",
+                  "quarter": null,
+                  "duration": 1
+                },
+                {
+                  "id": "t218",
+                  "text": "Produzir Auditoria QPS",
+                  "status": "todo",
+                  "quarter": null,
+                  "duration": 1
+                },
+                {
+                  "id": "t219",
+                  "text": "Produzir Auditoria de Caixa",
+                  "status": "todo",
+                  "quarter": null,
+                  "duration": 1
+                },
+                {
+                  "id": "t220",
+                  "text": "Produzir Auditoria de Cofre",
+                  "status": "todo",
+                  "quarter": null,
+                  "duration": 1
+                },
+                {
+                  "id": "t221",
+                  "text": "Produzir Relatório de Gestão",
+                  "status": "todo",
+                  "quarter": null,
+                  "duration": 1
+                },
+                {
+                  "id": "t222",
+                  "text": "Produzir Calendário Promocional Local",
+                  "status": "todo",
+                  "quarter": null,
+                  "duration": 1
+                },
+                {
+                  "id": "t223",
+                  "text": "Produzir Plano de Refresh",
+                  "status": "todo",
+                  "quarter": null,
+                  "duration": 1
+                },
+                {
+                  "id": "t224",
+                  "text": "Produzir Auditoria de Cliente Mistério",
+                  "status": "todo",
+                  "quarter": null,
+                  "duration": 1
+                },
+                {
+                  "id": "t225",
+                  "text": "Produzir Auditoria de Higiene e Segurança Alimentar",
+                  "status": "todo",
+                  "quarter": null,
+                  "duration": 1
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "f10",
+          "nome": "Fase 10 — Performance Review",
+          "open": false,
+          "temas": [
+            {
+              "nome": "Pack de Revisão Anual",
+              "tarefas": [
+                {
+                  "id": "t226",
+                  "text": "Produzir Cronograma de Revisão Anual",
+                  "status": "todo",
+                  "quarter": null,
+                  "duration": 1
+                },
+                {
+                  "id": "t227",
+                  "text": "Produzir Template de Revisão Anual",
+                  "status": "todo",
+                  "quarter": null,
+                  "duration": 1
+                },
+                {
+                  "id": "t228",
+                  "text": "Produzir Scorecard de Performance",
+                  "status": "todo",
+                  "quarter": null,
+                  "duration": 1
+                },
+                {
+                  "id": "t229",
+                  "text": "Produzir Matriz de Classificação",
+                  "status": "todo",
+                  "quarter": null,
+                  "duration": 1
+                },
+                {
+                  "id": "t230",
+                  "text": "Produzir Relatório Final de Performance Review",
+                  "status": "todo",
+                  "quarter": null,
+                  "duration": 1
+                },
+                {
+                  "id": "t231",
+                  "text": "Produzir Plano de Acção Correctiva",
+                  "status": "todo",
+                  "quarter": null,
+                  "duration": 1
+                },
+                {
+                  "id": "t232",
+                  "text": "Produzir Matriz de Expansibilidade",
+                  "status": "todo",
+                  "quarter": null,
+                  "duration": 1
+                },
+                {
+                  "id": "t233",
+                  "text": "Produzir Plano Anual de Negócio",
+                  "status": "todo",
+                  "quarter": null,
+                  "duration": 1
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+};
+
+// Migrate initial flat tarefas (strings) to objects with id/status/quarter/duration
+function migrateInitial(data) {
+  let counter = 1;
+  data.frentes.forEach(f => {
+    f.blocos.forEach(b => {
+      b.temas.forEach(t => {
+        t.tarefas = t.tarefas.map(taskOrStr => {
+          if (typeof taskOrStr === 'string') {
+            return {
+              id: 't' + (counter++),
+              text: taskOrStr,
+              status: 'todo', // todo | doing | blocked | done
+              quarter: null,  // 'Q2-26' | 'Q3-26' | 'Q4-26' | 'Q1-27' | null
+              duration: 1,    // months
+            };
+          }
+          return taskOrStr;
+        });
+      });
+    });
+  });
+  return data;
+}
+
+// ============================================
+// DRAG AND DROP SYSTEM
+// ============================================
+let dragData = null; // { type, ids: {...} }
+
+function setupDraggable(element, type, ids) {
+  element.draggable = true;
+  element.dataset.dragType = type;
+  element.dataset.dragIds = JSON.stringify(ids);
+
+  element.addEventListener('dragstart', (e) => {
+    e.stopPropagation();
+    dragData = { type, ids };
+    element.classList.add('dragging');
+    e.dataTransfer.effectAllowed = 'move';
+    // Need to set some data for Firefox
+    e.dataTransfer.setData('text/plain', JSON.stringify({ type, ids }));
+  });
+
+  element.addEventListener('dragend', () => {
+    element.classList.remove('dragging');
+    document.querySelectorAll('.drop-target-before, .drop-target-after').forEach(el => {
+      el.classList.remove('drop-target-before', 'drop-target-after');
+    });
+    dragData = null;
+  });
+
+  element.addEventListener('dragover', (e) => {
+    if (!dragData || dragData.type !== type) return;
+    e.preventDefault();
+    e.stopPropagation();
+    e.dataTransfer.dropEffect = 'move';
+
+    const rect = element.getBoundingClientRect();
+    const midpoint = rect.top + rect.height / 2;
+    const isBefore = e.clientY < midpoint;
+
+    document.querySelectorAll('.drop-target-before, .drop-target-after').forEach(el => {
+      el.classList.remove('drop-target-before', 'drop-target-after');
+    });
+    element.classList.add(isBefore ? 'drop-target-before' : 'drop-target-after');
+  });
+
+  element.addEventListener('dragleave', (e) => {
+    // Only clear if leaving completely
+    if (!element.contains(e.relatedTarget)) {
+      element.classList.remove('drop-target-before', 'drop-target-after');
+    }
+  });
+
+  element.addEventListener('drop', (e) => {
+    if (!dragData || dragData.type !== type) return;
+    e.preventDefault();
+    e.stopPropagation();
+
+    const rect = element.getBoundingClientRect();
+    const midpoint = rect.top + rect.height / 2;
+    const isBefore = e.clientY < midpoint;
+
+    handleDrop(type, dragData.ids, ids, isBefore);
+    element.classList.remove('drop-target-before', 'drop-target-after');
+    dragData = null;
+  });
+}
+
+function handleDrop(type, sourceIds, targetIds, isBefore) {
+  if (type === 'task') {
+    moveTask(sourceIds, targetIds, isBefore);
+  } else if (type === 'tema') {
+    moveTema(sourceIds, targetIds, isBefore);
+  } else if (type === 'bloco') {
+    moveBloco(sourceIds, targetIds, isBefore);
+  } else if (type === 'frente') {
+    moveFrente(sourceIds, targetIds, isBefore);
+  }
+}
+
+function moveTask(src, tgt, isBefore) {
+  // src/tgt: { frenteIdx, blocoIdx, temaIdx, taskIdx }
+  if (src.frenteIdx === tgt.frenteIdx && src.blocoIdx === tgt.blocoIdx &&
+      src.temaIdx === tgt.temaIdx && src.taskIdx === tgt.taskIdx) return;
+
+  const srcTema = state.frentes[src.frenteIdx].blocos[src.blocoIdx].temas[src.temaIdx];
+  const tgtTema = state.frentes[tgt.frenteIdx].blocos[tgt.blocoIdx].temas[tgt.temaIdx];
+  const [task] = srcTema.tarefas.splice(src.taskIdx, 1);
+
+  // Adjust target index if same tema and source was before target
+  let insertAt = tgt.taskIdx;
+  if (srcTema === tgtTema && src.taskIdx < tgt.taskIdx) insertAt--;
+  if (!isBefore) insertAt++;
+  insertAt = Math.max(0, Math.min(insertAt, tgtTema.tarefas.length));
+
+  tgtTema.tarefas.splice(insertAt, 0, task);
+  saveState();
+  render();
+}
+
+function moveTema(src, tgt, isBefore) {
+  // src/tgt: { frenteIdx, blocoIdx, temaIdx }
+  if (src.frenteIdx === tgt.frenteIdx && src.blocoIdx === tgt.blocoIdx && src.temaIdx === tgt.temaIdx) return;
+
+  const srcBloco = state.frentes[src.frenteIdx].blocos[src.blocoIdx];
+  const tgtBloco = state.frentes[tgt.frenteIdx].blocos[tgt.blocoIdx];
+  const [tema] = srcBloco.temas.splice(src.temaIdx, 1);
+
+  let insertAt = tgt.temaIdx;
+  if (srcBloco === tgtBloco && src.temaIdx < tgt.temaIdx) insertAt--;
+  if (!isBefore) insertAt++;
+  insertAt = Math.max(0, Math.min(insertAt, tgtBloco.temas.length));
+
+  tgtBloco.temas.splice(insertAt, 0, tema);
+  saveState();
+  render();
+}
+
+function moveBloco(src, tgt, isBefore) {
+  // src/tgt: { frenteIdx, blocoIdx }
+  if (src.frenteIdx === tgt.frenteIdx && src.blocoIdx === tgt.blocoIdx) return;
+
+  const srcFrente = state.frentes[src.frenteIdx];
+  const tgtFrente = state.frentes[tgt.frenteIdx];
+  const [bloco] = srcFrente.blocos.splice(src.blocoIdx, 1);
+
+  let insertAt = tgt.blocoIdx;
+  if (srcFrente === tgtFrente && src.blocoIdx < tgt.blocoIdx) insertAt--;
+  if (!isBefore) insertAt++;
+  insertAt = Math.max(0, Math.min(insertAt, tgtFrente.blocos.length));
+
+  tgtFrente.blocos.splice(insertAt, 0, bloco);
+  saveState();
+  render();
+}
+
+function moveFrente(src, tgt, isBefore) {
+  if (src.frenteIdx === tgt.frenteIdx) return;
+  const [frente] = state.frentes.splice(src.frenteIdx, 1);
+  let insertAt = tgt.frenteIdx;
+  if (src.frenteIdx < tgt.frenteIdx) insertAt--;
+  if (!isBefore) insertAt++;
+  insertAt = Math.max(0, Math.min(insertAt, state.frentes.length));
+  state.frentes.splice(insertAt, 0, frente);
+  saveState();
+  render();
+}
+
+// Move task one position up/down (touch-friendly)
+function moveTaskByOne(frenteIdx, blocoIdx, temaIdx, taskIdx, direction) {
+  const tema = state.frentes[frenteIdx].blocos[blocoIdx].temas[temaIdx];
+  const newIdx = taskIdx + direction;
+  if (newIdx < 0 || newIdx >= tema.tarefas.length) return;
+  const [t] = tema.tarefas.splice(taskIdx, 1);
+  tema.tarefas.splice(newIdx, 0, t);
+  saveState();
+  render();
+}
+
+// ============================================
+// STATE MANAGEMENT
+// ============================================
+const DATA_VERSION = 2; // bump this when initialData changes meaningfully
+let state;
+let isSnapshotMode = false;
+let snapshotMeta = null;
+
+async function tryLoadSnapshot() {
+  try {
+    // Try to load data.json from same directory as the HTML file
+    const response = await fetch('data.json', { cache: 'no-store' });
+    if (!response.ok) return null;
+    const data = await response.json();
+    return data;
+  } catch (e) {
+    // No snapshot file or fetch failed (e.g. opening locally with file://)
+    return null;
+  }
+}
+
+async function loadState() {
+  // First: try to load published snapshot
+  const snapshot = await tryLoadSnapshot();
+  if (snapshot) {
+    let importedState;
+    if (snapshot._meta && snapshot.state) {
+      snapshotMeta = snapshot._meta;
+      importedState = snapshot.state;
+    } else if (snapshot.frentes) {
+      importedState = snapshot;
+    }
+    if (importedState) {
+      const validation = validateState(importedState);
+      if (validation.valid) {
+        state = normalizeState(importedState);
+        isSnapshotMode = true;
+        return;
+      } else {
+        console.warn('data.json found but invalid:', validation.errors);
+      }
+    }
+  }
+
+  // Otherwise: load from localStorage (personal mode)
+  const saved = localStorage.getItem('plano2026');
+  const savedVersion = parseInt(localStorage.getItem('plano2026_version') || '0', 10);
+
+  if (saved && savedVersion === DATA_VERSION) {
+    try {
+      state = JSON.parse(saved);
+      return;
+    } catch(e) { console.error('Bad saved state', e); }
+  }
+
+  if (saved && savedVersion !== DATA_VERSION) {
+    const userChoice = confirm(
+      'O conteúdo base do plano foi actualizado.\n\n' +
+      'Clica OK para carregar a versão nova (perdes alterações).\n' +
+      'Clica Cancelar para manter o teu estado actual.\n\n' +
+      'Dica: exporta antes para backup.'
+    );
+    if (!userChoice) {
+      try {
+        state = JSON.parse(saved);
+        localStorage.setItem('plano2026_version', String(DATA_VERSION));
+        return;
+      } catch(e) { console.error('Bad saved state', e); }
+    }
+  }
+
+  state = migrateInitial(JSON.parse(JSON.stringify(initialData)));
+  localStorage.setItem('plano2026_version', String(DATA_VERSION));
+}
+
+function saveState() {
+  if (isSnapshotMode) {
+    // In snapshot mode, changes are local to the browser session only.
+    // We deliberately don't persist to localStorage so the user always sees
+    // the latest published snapshot when they refresh.
+    return;
+  }
+  localStorage.setItem('plano2026', JSON.stringify(state));
+}
+
+function findTask(taskId) {
+  for (const f of state.frentes) {
+    for (const b of f.blocos) {
+      for (const t of b.temas) {
+        for (const task of t.tarefas) {
+          if (task.id === taskId) return { task, frente: f, bloco: b, tema: t };
+        }
+      }
+    }
+  }
+  return null;
+}
+
+// ============================================
+// RENDER
+// ============================================
+function el(tag, attrs = {}, ...children) {
+  const e = document.createElement(tag);
+  for (const [k, v] of Object.entries(attrs)) {
+    if (k === 'class') e.className = v;
+    else if (k.startsWith('on')) e.addEventListener(k.slice(2), v);
+    else if (k === 'html') e.innerHTML = v;
+    else e.setAttribute(k, v);
+  }
+  for (const c of children) {
+    if (c == null) continue;
+    if (typeof c === 'string') e.appendChild(document.createTextNode(c));
+    else e.appendChild(c);
+  }
+  return e;
+}
+
+function getAllTasks() {
+  const all = [];
+  state.frentes.forEach(f => {
+    f.blocos.forEach(b => {
+      b.temas.forEach(t => {
+        t.tarefas.forEach(task => all.push({ task, frente: f, bloco: b, tema: t }));
+      });
+    });
+  });
+  return all;
+}
+
+function countFrente(frente) {
+  let total = 0, done = 0;
+  frente.blocos.forEach(b => {
+    b.temas.forEach(t => {
+      t.tarefas.forEach(task => {
+        total++;
+        if (task.status === 'done') done++;
+      });
+    });
+  });
+  return { total, done };
+}
+
+function renderDashboard() {
+  const all = getAllTasks();
+  const total = all.length;
+  const done = all.filter(x => x.task.status === 'done').length;
+  const doing = all.filter(x => x.task.status === 'doing').length;
+  const blocked = all.filter(x => x.task.status === 'blocked').length;
+  const todo = total - done - doing - blocked;
+
+  document.getElementById('statTotal').textContent = total;
+  document.getElementById('statDetail').textContent = `${done} concluídas · ${Math.round(done/total*100) || 0}%`;
+
+  // Status bars
+  const statusBars = document.getElementById('statusBars');
+  statusBars.innerHTML = '';
+  const statuses = [
+    ['Por fazer', todo, '#1a1a1a'],
+    ['Em curso', doing, '#c08a3e'],
+    ['Bloqueado', blocked, '#b85450'],
+    ['Concluído', done, '#6a8a5e'],
+  ];
+  statuses.forEach(([label, count, color]) => {
+    const pct = total ? (count / total * 100) : 0;
+    const row = el('div', { class: 'progress-row' },
+      el('div', { class: 'lbl' }, label),
+      el('div', { class: 'bar' },
+        Object.assign(el('div', { class: 'bar-fill' }), { style: `width:${pct}%; background:${color};` })
+      ),
+      el('div', { class: 'num' }, String(count))
+    );
+    statusBars.appendChild(row);
+  });
+
+  // Frente bars
+  const frenteBars = document.getElementById('frenteBars');
+  frenteBars.innerHTML = '';
+  state.frentes.forEach(f => {
+    const { total: ft, done: fd } = countFrente(f);
+    const pct = ft ? (fd / ft * 100) : 0;
+    const row = el('div', { class: 'progress-row' },
+      el('div', { class: 'lbl' }, f.nome.length > 10 ? f.nome.slice(0, 10) : f.nome),
+      el('div', { class: 'bar' },
+        Object.assign(el('div', { class: 'bar-fill' }), { style: `width:${pct}%;` })
+      ),
+      el('div', { class: 'num' }, `${fd}/${ft}`)
+    );
+    frenteBars.appendChild(row);
+  });
+}
+
+function renderGantt() {
+  const gantt = document.getElementById('gantt');
+  gantt.innerHTML = '';
+
+  // Header
+  const header = el('div', { class: 'gantt-header' });
+  header.appendChild(el('div', {}, 'Tarefa'));
+  MONTHS.forEach((m, i) => {
+    const isQuarterStart = (i % 3 === 0);
+    header.appendChild(el('div', { class: isQuarterStart ? 'gantt-quarter-mark' : '' }, m));
+  });
+  gantt.appendChild(header);
+
+  // Tasks with quarter set
+  const positioned = getAllTasks().filter(x => x.task.quarter);
+
+  if (positioned.length === 0) {
+    gantt.appendChild(el('div', { class: 'gantt-empty' }, 'Sem tarefas posicionadas no cronograma. Usa o botão "+ trim" em qualquer tarefa abaixo para a colocar aqui.'));
+  } else {
+    positioned.forEach(({ task, frente }) => {
+      const row = el('div', { class: 'gantt-row' });
+      row.appendChild(
+        el('div', { class: 'gantt-label' },
+          Object.assign(el('span', { class: 'gantt-frente' }), { textContent: frente.nome.slice(0, 3).toUpperCase() }),
+          document.createTextNode(task.text)
+        )
+      );
+
+      const cellsContainer = el('div', { class: 'gantt-cells' });
+      for (let i = 0; i < 12; i++) {
+        cellsContainer.appendChild(el('div', { class: 'gantt-cell' }));
+      }
+
+      const startMonth = QUARTER_MONTHS[task.quarter];
+      const dur = Math.min(task.duration || 1, 12 - startMonth);
+      const leftPct = (startMonth / 12) * 100;
+      const widthPct = (dur / 12) * 100;
+
+      const bar = el('div', {
+        class: 'gantt-bar ' + task.status,
+        style: `left:${leftPct}%; width:calc(${widthPct}% - 4px);`,
+        title: task.text + ' · ' + task.quarter + ' · ' + dur + 'm',
+        onclick: () => openQuarterPopover(event, task.id, true)
+      }, task.text);
+      cellsContainer.appendChild(bar);
+
+      row.appendChild(cellsContainer);
+      gantt.appendChild(row);
+    });
+  }
+}
+
+function renderTasks() {
+  const container = document.getElementById('tasksContainer');
+  container.innerHTML = '';
+
+  state.frentes.forEach((frente, frenteIdx) => {
+    const { total, done } = countFrente(frente);
+
+    const frenteDiv = el('div', { class: 'frente' + (frente.open ? ' open' : '') });
+
+    // Frente header
+    const fHeader = el('div', { class: 'frente-header' });
+
+    const hh3 = el('h3', { style: 'display: flex; align-items: center; gap: 6px;' });
+
+    // Drag handle for frente
+    const fHandle = el('span', { class: 'drag-handle', title: 'Arrastar para reordenar frente' }, '⋮⋮');
+    hh3.appendChild(fHandle);
+
+    hh3.appendChild(el('span', { class: 'chevron' }));
+
+    const frenteName = el('span', {
+      class: 'editable',
+      contenteditable: 'true',
+      style: 'display: inline-block; min-width: 100px;'
+    }, frente.nome);
+    frenteName.addEventListener('blur', () => {
+      const newName = frenteName.textContent.trim();
+      if (newName && newName !== frente.nome) {
+        frente.nome = newName;
+        saveState();
+        renderDashboard();
+      } else if (!newName) {
+        frenteName.textContent = frente.nome;
+      }
+    });
+    frenteName.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter') { e.preventDefault(); frenteName.blur(); }
+      if (e.key === 'Escape') { frenteName.textContent = frente.nome; frenteName.blur(); }
+    });
+    frenteName.addEventListener('click', (e) => e.stopPropagation());
+    hh3.appendChild(frenteName);
+
+    fHeader.appendChild(hh3);
+
+    const rightSide = el('div', { style: 'display: flex; align-items: center; gap: 12px;' });
+
+    const sectionActions = el('div', { class: 'section-actions' });
+    const delFrenteBtn = el('button', { class: 'icon-btn danger', title: 'Apagar frente inteira' }, '×');
+    delFrenteBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      if (confirm(`Apagar a frente "${frente.nome}" e TODAS as suas tarefas?`)) {
+        state.frentes.splice(frenteIdx, 1);
+        saveState();
+        render();
+      }
+    });
+    sectionActions.appendChild(delFrenteBtn);
+    rightSide.appendChild(sectionActions);
+
+    rightSide.appendChild(el('div', { class: 'frente-meta' }, `${done}/${total}`));
+    fHeader.appendChild(rightSide);
+
+    // Make frente draggable via header (but not via editable name or buttons)
+    setupDraggable(fHeader, 'frente', { frenteIdx });
+    fHeader.addEventListener('mousedown', (e) => {
+      if (e.target === frenteName || e.target.closest('.section-actions') || e.target.tagName === 'BUTTON') {
+        fHeader.draggable = false;
+      } else {
+        fHeader.draggable = true;
+      }
+    });
+
+    fHeader.addEventListener('click', (e) => {
+      if (e.target === frenteName || e.target.closest('.section-actions') || e.target === fHandle) return;
+      frente.open = !frente.open;
+      saveState();
+      render();
+    });
+    frenteDiv.appendChild(fHeader);
+
+    const fBody = el('div', { class: 'frente-body' });
+
+    frente.blocos.forEach((bloco, blocoIdx) => {
+      const blocoTotal = bloco.temas.reduce((acc, t) => acc + t.tarefas.length, 0);
+      const blocoDone = bloco.temas.reduce((acc, t) => acc + t.tarefas.filter(x => x.status === 'done').length, 0);
+
+      const blocoDiv = el('div', { class: 'bloco' + (bloco.open ? ' open' : '') });
+
+      const bHeader = el('div', { class: 'bloco-header' });
+
+      const bTitle = el('div', { class: 'bloco-title' });
+
+      // Drag handle for bloco
+      const bHandle = el('span', { class: 'drag-handle', title: 'Arrastar para reordenar bloco' }, '⋮⋮');
+      bTitle.appendChild(bHandle);
+
+      bTitle.appendChild(el('span', { class: 'chevron' }));
+
+      const blocoName = el('span', {
+        class: 'editable',
+        contenteditable: 'true',
+        style: 'display: inline-block; min-width: 100px;'
+      }, bloco.nome);
+      blocoName.addEventListener('blur', () => {
+        const newName = blocoName.textContent.trim();
+        if (newName && newName !== bloco.nome) {
+          bloco.nome = newName;
+          saveState();
+        } else if (!newName) {
+          blocoName.textContent = bloco.nome;
+        }
+      });
+      blocoName.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter') { e.preventDefault(); blocoName.blur(); }
+        if (e.key === 'Escape') { blocoName.textContent = bloco.nome; blocoName.blur(); }
+      });
+      blocoName.addEventListener('click', (e) => e.stopPropagation());
+      bTitle.appendChild(blocoName);
+
+      bHeader.appendChild(bTitle);
+
+      const bRight = el('div', { style: 'display: flex; align-items: center; gap: 12px;' });
+
+      const blocoActions = el('div', { class: 'section-actions' });
+      const delBlocoBtn = el('button', { class: 'icon-btn danger', title: 'Apagar bloco inteiro' }, '×');
+      delBlocoBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        if (confirm(`Apagar o bloco "${bloco.nome}" e TODAS as suas tarefas?`)) {
+          frente.blocos.splice(blocoIdx, 1);
+          saveState();
+          render();
+        }
+      });
+      blocoActions.appendChild(delBlocoBtn);
+      bRight.appendChild(blocoActions);
+
+      bRight.appendChild(el('div', { class: 'bloco-meta' }, `${blocoDone}/${blocoTotal}`));
+      bHeader.appendChild(bRight);
+
+      // Make bloco draggable
+      setupDraggable(bHeader, 'bloco', { frenteIdx, blocoIdx });
+      bHeader.addEventListener('mousedown', (e) => {
+        if (e.target === blocoName || e.target.closest('.section-actions') || e.target.tagName === 'BUTTON') {
+          bHeader.draggable = false;
+        } else {
+          bHeader.draggable = true;
+        }
+      });
+
+      bHeader.addEventListener('click', (e) => {
+        if (e.target === blocoName || e.target.closest('.section-actions') || e.target === bHandle) return;
+        bloco.open = !bloco.open;
+        saveState();
+        render();
+      });
+      blocoDiv.appendChild(bHeader);
+
+      const bBody = el('div', { class: 'bloco-body' });
+
+      bloco.temas.forEach((tema, temaIdx) => {
+        const temaDiv = el('div', { class: 'tema' });
+
+        const temaHeader = el('div', { class: 'tema-title' });
+
+        // Drag handle for tema
+        const tHandle = el('span', { class: 'drag-handle', title: 'Arrastar para reordenar tema' }, '⋮⋮');
+        temaHeader.appendChild(tHandle);
+
+        const temaName = el('span', {
+          class: 'editable',
+          contenteditable: 'true',
+          style: 'display: inline-block; min-width: 80px;'
+        }, tema.nome);
+        temaName.addEventListener('blur', () => {
+          const newName = temaName.textContent.trim();
+          if (newName && newName !== tema.nome) {
+            tema.nome = newName;
+            saveState();
+          } else if (!newName) {
+            temaName.textContent = tema.nome;
+          }
+        });
+        temaName.addEventListener('keydown', (e) => {
+          if (e.key === 'Enter') { e.preventDefault(); temaName.blur(); }
+          if (e.key === 'Escape') { temaName.textContent = tema.nome; temaName.blur(); }
+        });
+        temaHeader.appendChild(temaName);
+
+        const temaActions = el('div', { class: 'section-actions' });
+        const delTemaBtn = el('button', { class: 'icon-btn danger', title: 'Apagar tema' }, '×');
+        delTemaBtn.addEventListener('click', () => {
+          if (confirm(`Apagar o tema "${tema.nome}" e todas as suas tarefas?`)) {
+            bloco.temas.splice(temaIdx, 1);
+            saveState();
+            render();
+          }
+        });
+        temaActions.appendChild(delTemaBtn);
+        temaHeader.appendChild(temaActions);
+
+        // Make tema header draggable
+        setupDraggable(temaHeader, 'tema', { frenteIdx, blocoIdx, temaIdx });
+        temaHeader.addEventListener('mousedown', (e) => {
+          if (e.target === temaName || e.target.tagName === 'BUTTON') {
+            temaHeader.draggable = false;
+          } else {
+            temaHeader.draggable = true;
+          }
+        });
+
+        temaDiv.appendChild(temaHeader);
+
+        const ul = el('ul', { class: 'task-list' });
+        tema.tarefas.forEach((task, taskIdx) => {
+          ul.appendChild(renderTask(task, frenteIdx, blocoIdx, temaIdx, taskIdx, tema.tarefas.length));
+        });
+        temaDiv.appendChild(ul);
+
+        const addBtn = el('button', {
+          class: 'add-task-btn',
+          onclick: () => addTask(frente.id, bloco.id, temaIdx)
+        }, '+ tarefa');
+        temaDiv.appendChild(addBtn);
+
+        bBody.appendChild(temaDiv);
+      });
+
+      // Add tema button
+      const addTemaBtn = el('button', {
+        class: 'add-tema-btn',
+        onclick: () => addTema(frente.id, bloco.id)
+      }, '+ tema');
+      bBody.appendChild(addTemaBtn);
+
+      blocoDiv.appendChild(bBody);
+      fBody.appendChild(blocoDiv);
+    });
+
+    // Add bloco button
+    const addBlocoBtn = el('button', {
+      class: 'add-block-btn',
+      onclick: () => addBloco(frente.id)
+    }, '+ bloco / fase');
+    fBody.appendChild(addBlocoBtn);
+
+    frenteDiv.appendChild(fBody);
+    container.appendChild(frenteDiv);
+  });
+
+  // Add frente button at the end
+  const addFrenteBtn = el('button', {
+    class: 'add-block-btn',
+    style: 'margin-top: 24px;',
+    onclick: () => addFrente()
+  }, '+ frente');
+  container.appendChild(addFrenteBtn);
+}
+
+function renderTask(task, frenteIdx, blocoIdx, temaIdx, taskIdx, totalTasks) {
+  const li = el('li', { class: 'task' + (task.status === 'done' ? ' done' : '') });
+
+  // Drag handle
+  const handle = el('span', { class: 'drag-handle', title: 'Arrastar para mover' }, '⋮⋮');
+  li.appendChild(handle);
+
+  // Make whole li draggable, but only via the handle area
+  setupDraggable(li, 'task', { frenteIdx, blocoIdx, temaIdx, taskIdx });
+  // Prevent drag from contenteditable text
+  li.addEventListener('mousedown', (e) => {
+    if (e.target.classList.contains('task-text') ||
+        e.target.tagName === 'INPUT' ||
+        e.target.tagName === 'BUTTON') {
+      li.draggable = false;
+    } else {
+      li.draggable = true;
+    }
+  });
+
+  const checkbox = el('input', { type: 'checkbox' });
+  checkbox.checked = (task.status === 'done');
+  checkbox.addEventListener('change', () => {
+    task.status = checkbox.checked ? 'done' : 'todo';
+    saveState();
+    render();
+  });
+  li.appendChild(checkbox);
+
+  const textDiv = el('div', { class: 'task-text', contenteditable: 'true' }, task.text);
+  textDiv.addEventListener('blur', () => {
+    const newText = textDiv.textContent.trim();
+    if (newText && newText !== task.text) {
+      task.text = newText;
+      saveState();
+      renderDashboard();
+      renderGantt();
+    } else if (!newText) {
+      textDiv.textContent = task.text;
+    }
+  });
+  textDiv.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter') { e.preventDefault(); textDiv.blur(); }
+    if (e.key === 'Escape') { textDiv.textContent = task.text; textDiv.blur(); }
+  });
+  li.appendChild(textDiv);
+
+  const actions = el('div', { class: 'task-actions' });
+
+  // Move arrows (touch fallback)
+  const arrows = el('div', { class: 'move-arrows' });
+  const upBtn = el('button', { class: 'move-arrow', title: 'Mover para cima' }, '▲');
+  upBtn.disabled = (taskIdx === 0);
+  upBtn.addEventListener('click', (e) => {
+    e.stopPropagation();
+    moveTaskByOne(frenteIdx, blocoIdx, temaIdx, taskIdx, -1);
+  });
+  const downBtn = el('button', { class: 'move-arrow', title: 'Mover para baixo' }, '▼');
+  downBtn.disabled = (taskIdx === totalTasks - 1);
+  downBtn.addEventListener('click', (e) => {
+    e.stopPropagation();
+    moveTaskByOne(frenteIdx, blocoIdx, temaIdx, taskIdx, 1);
+  });
+  arrows.appendChild(upBtn);
+  arrows.appendChild(downBtn);
+  actions.appendChild(arrows);
+
+  // Status button
+  const statusLabels = { todo: 'por fazer', doing: 'em curso', blocked: 'bloqueado', done: 'feito' };
+  const statusBtn = el('button', {
+    class: 'task-status ' + task.status,
+    title: 'Mudar estado'
+  }, statusLabels[task.status]);
+  statusBtn.addEventListener('click', () => {
+    const cycle = ['todo', 'doing', 'blocked', 'done'];
+    const next = cycle[(cycle.indexOf(task.status) + 1) % cycle.length];
+    task.status = next;
+    saveState();
+    render();
+  });
+  actions.appendChild(statusBtn);
+
+  // Quarter button
+  const qBtn = el('button', {
+    class: 'task-quarter' + (task.quarter ? ' set' : ''),
+    title: 'Posicionar no cronograma'
+  }, task.quarter || '+ trim');
+  qBtn.addEventListener('click', (e) => {
+    e.stopPropagation();
+    openQuarterPopover(e, task.id, false);
+  });
+  actions.appendChild(qBtn);
+
+  // Delete button
+  const delBtn = el('button', { class: 'task-delete', title: 'Apagar' }, '×');
+  delBtn.addEventListener('click', () => {
+    if (confirm('Apagar esta tarefa?')) {
+      const found = findTask(task.id);
+      if (found) {
+        const idx = found.tema.tarefas.indexOf(task);
+        found.tema.tarefas.splice(idx, 1);
+        saveState();
+        render();
+      }
+    }
+  });
+  actions.appendChild(delBtn);
+
+  li.appendChild(actions);
+  return li;
+}
+
+// ============================================
+// POPOVER for quarter + duration
+// ============================================
+function openQuarterPopover(event, taskId, fromGantt) {
+  event.stopPropagation();
+  const popover = document.getElementById('popover');
+  popover.innerHTML = '';
+
+  const found = findTask(taskId);
+  if (!found) return;
+  const task = found.task;
+
+  // Quarter buttons
+  const quartersDiv = el('div', { style: 'border-bottom: 1px solid #e8e8e8; padding-bottom: 4px; margin-bottom: 4px;' });
+  QUARTERS.forEach(q => {
+    const b = el('button', {
+      style: task.quarter === q ? 'background:#1a1a1a; color:#fff;' : ''
+    }, q);
+    b.addEventListener('click', () => {
+      task.quarter = q;
+      saveState();
+      hidePopover();
+      render();
+    });
+    quartersDiv.appendChild(b);
+  });
+  popover.appendChild(quartersDiv);
+
+  // Duration
+  const durDiv = el('div', { style: 'border-bottom: 1px solid #e8e8e8; padding-bottom: 4px; margin-bottom: 4px;' });
+  durDiv.appendChild(el('div', { style: 'font-size: 10px; color: #8c8c8c; padding: 4px 12px; text-transform: uppercase; letter-spacing: 0.08em;' }, 'Duração'));
+  [1, 2, 3, 6].forEach(m => {
+    const b = el('button', {
+      style: task.duration === m ? 'background:#1a1a1a; color:#fff;' : ''
+    }, m + ' ' + (m === 1 ? 'mês' : 'meses'));
+    b.addEventListener('click', () => {
+      task.duration = m;
+      saveState();
+      render();
+      // Reposition popover for current task if still visible
+    });
+    durDiv.appendChild(b);
+  });
+  popover.appendChild(durDiv);
+
+  // Remove
+  if (task.quarter) {
+    const remBtn = el('button', { style: 'color: #b85450;' }, 'Remover do cronograma');
+    remBtn.addEventListener('click', () => {
+      task.quarter = null;
+      saveState();
+      hidePopover();
+      render();
+    });
+    popover.appendChild(remBtn);
+  }
+
+  // Position
+  const rect = event.target.getBoundingClientRect();
+  popover.style.top = (rect.bottom + window.scrollY + 4) + 'px';
+  popover.style.left = (rect.left + window.scrollX) + 'px';
+  popover.classList.add('show');
+
+  setTimeout(() => {
+    document.addEventListener('click', hidePopoverOnce, { once: true });
+  }, 50);
+}
+
+function hidePopover() { document.getElementById('popover').classList.remove('show'); }
+function hidePopoverOnce(e) {
+  if (!document.getElementById('popover').contains(e.target)) hidePopover();
+  else setTimeout(() => document.addEventListener('click', hidePopoverOnce, { once: true }), 50);
+}
+
+// ============================================
+// ADD TASK
+// ============================================
+function addTask(frenteId, blocoId, temaIdx) {
+  const text = prompt('Nova tarefa:');
+  if (!text || !text.trim()) return;
+  const frente = state.frentes.find(f => f.id === frenteId);
+  const bloco = frente.blocos.find(b => b.id === blocoId);
+  const tema = bloco.temas[temaIdx];
+  const newId = 't' + Date.now();
+  tema.tarefas.push({
+    id: newId,
+    text: text.trim(),
+    status: 'todo',
+    quarter: null,
+    duration: 1,
+  });
+  saveState();
+  render();
+}
+
+function addTema(frenteId, blocoId) {
+  const nome = prompt('Nome do novo tema:');
+  if (!nome || !nome.trim()) return;
+  const frente = state.frentes.find(f => f.id === frenteId);
+  const bloco = frente.blocos.find(b => b.id === blocoId);
+  bloco.temas.push({ nome: nome.trim(), tarefas: [] });
+  if (!bloco.open) bloco.open = true;
+  saveState();
+  render();
+}
+
+function addBloco(frenteId) {
+  const nome = prompt('Nome do novo bloco / fase:');
+  if (!nome || !nome.trim()) return;
+  const frente = state.frentes.find(f => f.id === frenteId);
+  const newId = 'b' + Date.now();
+  frente.blocos.push({ id: newId, nome: nome.trim(), open: true, temas: [] });
+  if (!frente.open) frente.open = true;
+  saveState();
+  render();
+}
+
+function addFrente() {
+  const nome = prompt('Nome da nova frente:');
+  if (!nome || !nome.trim()) return;
+  const newId = 'fr' + Date.now();
+  state.frentes.push({ id: newId, nome: nome.trim(), open: true, blocos: [] });
+  saveState();
+  render();
+}
+
+// ============================================
+// EXPORT / IMPORT
+// ============================================
+function countAllTasks(stateObj) {
+  let count = 0;
+  (stateObj.frentes || []).forEach(f => {
+    (f.blocos || []).forEach(b => {
+      (b.temas || []).forEach(t => {
+        count += (t.tarefas || []).length;
+      });
+    });
+  });
+  return count;
+}
+
+function exportData() {
+  try {
+    // Wrap state with metadata for safe re-import later
+    const payload = {
+      _meta: {
+        app: 'plano-2026',
+        version: DATA_VERSION,
+        exportedAt: new Date().toISOString(),
+        totalTasks: countAllTasks(state),
+        totalFrentes: state.frentes.length,
+      },
+      state: state,
+    };
+
+    const json = JSON.stringify(payload, null, 2);
+    const blob = new Blob([json], { type: 'application/json;charset=utf-8' });
+    const url = URL.createObjectURL(blob);
+
+    const now = new Date();
+    const datePart = now.toISOString().slice(0, 10); // 2026-04-27
+    const timePart = now.toTimeString().slice(0, 5).replace(':', 'h'); // 14h32
+    const filename = `plano-2026_${datePart}_${timePart}.json`;
+
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = filename;
+    a.style.display = 'none';
+    document.body.appendChild(a);
+    a.click();
+
+    // Revoke URL only after browser has had a chance to start the download
+    setTimeout(() => {
+      document.body.removeChild(a);
+      URL.revokeObjectURL(url);
+    }, 1000);
+
+    toast(`Exportado · ${payload._meta.totalTasks} tarefas`);
+  } catch (err) {
+    console.error('Export error:', err);
+    alert('Erro ao exportar: ' + err.message + '\n\nO estado actual NÃO foi alterado.');
+  }
+}
+
+// Validate the structure of imported state. Returns { valid: bool, errors: [], warnings: [] }
+function validateState(s) {
+  const errors = [];
+  const warnings = [];
+
+  if (!s || typeof s !== 'object') {
+    errors.push('O ficheiro não contém um objecto válido.');
+    return { valid: false, errors, warnings };
+  }
+
+  if (!Array.isArray(s.frentes)) {
+    errors.push('Falta a lista de frentes (campo "frentes" não existe ou não é uma lista).');
+    return { valid: false, errors, warnings };
+  }
+
+  if (s.frentes.length === 0) {
+    warnings.push('O ficheiro não contém nenhuma frente.');
+  }
+
+  s.frentes.forEach((f, fi) => {
+    if (!f || typeof f !== 'object') {
+      errors.push(`Frente #${fi + 1} não é um objecto válido.`);
+      return;
+    }
+    if (typeof f.nome !== 'string') errors.push(`Frente #${fi + 1} sem nome válido.`);
+    if (!Array.isArray(f.blocos)) {
+      errors.push(`Frente "${f.nome || fi + 1}" sem lista de blocos.`);
+      return;
+    }
+    f.blocos.forEach((b, bi) => {
+      if (!b || typeof b !== 'object') {
+        errors.push(`Bloco #${bi + 1} de "${f.nome}" não é válido.`);
+        return;
+      }
+      if (typeof b.nome !== 'string') errors.push(`Bloco #${bi + 1} de "${f.nome}" sem nome.`);
+      if (!Array.isArray(b.temas)) {
+        errors.push(`Bloco "${b.nome || bi + 1}" sem lista de temas.`);
+        return;
+      }
+      b.temas.forEach((t, ti) => {
+        if (!t || typeof t !== 'object') {
+          errors.push(`Tema #${ti + 1} de "${b.nome}" não é válido.`);
+          return;
+        }
+        if (typeof t.nome !== 'string') errors.push(`Tema #${ti + 1} de "${b.nome}" sem nome.`);
+        if (!Array.isArray(t.tarefas)) {
+          errors.push(`Tema "${t.nome || ti + 1}" sem lista de tarefas.`);
+          return;
+        }
+      });
+    });
+  });
+
+  return { valid: errors.length === 0, errors, warnings };
+}
+
+// Normalize tasks: handle old format (strings), missing fields, missing IDs
+function normalizeState(s) {
+  let counter = Date.now();
+  s.frentes.forEach((f, fi) => {
+    if (!f.id) f.id = 'fr_' + (++counter);
+    if (typeof f.open !== 'boolean') f.open = (fi === 0);
+    f.blocos.forEach((b, bi) => {
+      if (!b.id) b.id = 'b_' + (++counter);
+      if (typeof b.open !== 'boolean') b.open = false;
+      b.temas.forEach(t => {
+        t.tarefas = t.tarefas.map(taskOrStr => {
+          if (typeof taskOrStr === 'string') {
+            return {
+              id: 't_' + (++counter),
+              text: taskOrStr,
+              status: 'todo',
+              quarter: null,
+              duration: 1,
+            };
+          }
+          // Existing task object — fill missing fields
+          const task = { ...taskOrStr };
+          if (!task.id) task.id = 't_' + (++counter);
+          if (typeof task.text !== 'string') task.text = '(sem texto)';
+          if (!['todo', 'doing', 'blocked', 'done'].includes(task.status)) task.status = 'todo';
+          if (task.quarter && !QUARTERS.includes(task.quarter)) task.quarter = null;
+          if (typeof task.duration !== 'number' || task.duration < 1) task.duration = 1;
+          return task;
+        });
+      });
+    });
+  });
+  return s;
+}
+
+function importData(event) {
+  const file = event.target.files[0];
+  if (!file) return;
+
+  // Reset input immediately so same file can be re-selected later
+  const inputEl = event.target;
+
+  // Quick sanity checks before reading
+  if (file.size > 50 * 1024 * 1024) {
+    alert('Ficheiro demasiado grande (>50 MB). Não parece um export válido deste plano.');
+    inputEl.value = '';
+    return;
+  }
+  if (!file.name.toLowerCase().endsWith('.json')) {
+    if (!confirm(`O ficheiro "${file.name}" não termina em .json. Continuar mesmo assim?`)) {
+      inputEl.value = '';
+      return;
+    }
+  }
+
+  const reader = new FileReader();
+
+  reader.onerror = () => {
+    alert('Erro ao ler o ficheiro. O estado actual NÃO foi alterado.');
+    inputEl.value = '';
+  };
+
+  reader.onload = (e) => {
+    try {
+      const raw = e.target.result;
+      let parsed;
+      try {
+        parsed = JSON.parse(raw);
+      } catch (parseErr) {
+        throw new Error('O ficheiro não é JSON válido. Verifica que não foi modificado manualmente.');
+      }
+
+      // Detect format: wrapped (with _meta) vs raw state (legacy)
+      let importedState;
+      let meta = null;
+      if (parsed && parsed._meta && parsed.state) {
+        meta = parsed._meta;
+        importedState = parsed.state;
+      } else if (parsed && parsed.frentes) {
+        // Legacy format (raw state)
+        importedState = parsed;
+      } else {
+        throw new Error('Formato não reconhecido. Falta o campo "state" ou "frentes".');
+      }
+
+      // Validate structure
+      const validation = validateState(importedState);
+      if (!validation.valid) {
+        throw new Error('Estrutura inválida:\n\n• ' + validation.errors.slice(0, 5).join('\n• ') +
+                        (validation.errors.length > 5 ? `\n\n(...e mais ${validation.errors.length - 5} erros)` : ''));
+      }
+
+      // Normalize: fill missing fields, convert old task strings to objects
+      importedState = normalizeState(importedState);
+
+      // Build confirmation message
+      const importedTaskCount = countAllTasks(importedState);
+      const currentTaskCount = countAllTasks(state);
+      const importedFrentes = importedState.frentes.length;
+
+      let confirmMsg = '';
+      if (meta) {
+        const exportDate = meta.exportedAt ? new Date(meta.exportedAt).toLocaleString('pt-PT') : 'desconhecida';
+        confirmMsg += `Ficheiro válido — exportado em ${exportDate}.\n\n`;
+        if (meta.version && meta.version !== DATA_VERSION) {
+          confirmMsg += `⚠ Versão diferente: ficheiro v${meta.version}, app v${DATA_VERSION}. Pode haver pequenas incompatibilidades.\n\n`;
+        }
+      } else {
+        confirmMsg += 'Ficheiro em formato antigo (sem metadados). Será convertido.\n\n';
+      }
+      confirmMsg += `O ficheiro contém:\n`;
+      confirmMsg += `  • ${importedFrentes} frente(s)\n`;
+      confirmMsg += `  • ${importedTaskCount} tarefa(s)\n\n`;
+      confirmMsg += `O teu estado actual tem:\n`;
+      confirmMsg += `  • ${state.frentes.length} frente(s)\n`;
+      confirmMsg += `  • ${currentTaskCount} tarefa(s)\n\n`;
+      if (validation.warnings.length > 0) {
+        confirmMsg += `Avisos:\n  • ${validation.warnings.join('\n  • ')}\n\n`;
+      }
+      confirmMsg += `Será criado um backup automático do estado actual antes de substituir.\n\n`;
+      confirmMsg += `Substituir agora?`;
+
+      if (!confirm(confirmMsg)) {
+        inputEl.value = '';
+        toast('Importação cancelada');
+        return;
+      }
+
+      // Create automatic backup of current state in localStorage
+      try {
+        const backupKey = 'plano2026_backup_' + Date.now();
+        localStorage.setItem(backupKey, JSON.stringify(state));
+        // Keep only last 3 backups to avoid filling localStorage
+        const backupKeys = Object.keys(localStorage).filter(k => k.startsWith('plano2026_backup_')).sort();
+        while (backupKeys.length > 3) {
+          localStorage.removeItem(backupKeys.shift());
+        }
+      } catch (backupErr) {
+        console.warn('Backup falhou:', backupErr);
+        if (!confirm('Não foi possível criar backup automático (localStorage cheio?).\n\nContinuar mesmo assim? Não conseguirás recuperar o estado actual.')) {
+          inputEl.value = '';
+          return;
+        }
+      }
+
+      // Apply import
+      state = importedState;
+      saveState();
+      render();
+      toast(`Importado · ${importedTaskCount} tarefas em ${importedFrentes} frentes`);
+
+    } catch (err) {
+      console.error('Import error:', err);
+      alert('Erro ao importar:\n\n' + err.message + '\n\nO estado actual NÃO foi alterado.');
+    } finally {
+      inputEl.value = '';
+    }
+  };
+
+  reader.readAsText(file, 'utf-8');
+}
+
+// Recover from latest backup (in case of accidental import)
+function recoverBackup() {
+  const backupKeys = Object.keys(localStorage).filter(k => k.startsWith('plano2026_backup_')).sort();
+  if (backupKeys.length === 0) {
+    alert('Não há backups disponíveis.');
+    return;
+  }
+  const latest = backupKeys[backupKeys.length - 1];
+  const ts = parseInt(latest.replace('plano2026_backup_', ''), 10);
+  const date = new Date(ts).toLocaleString('pt-PT');
+  if (confirm(`Recuperar o backup de ${date}?\n\nVai substituir o estado actual.`)) {
+    try {
+      const backup = JSON.parse(localStorage.getItem(latest));
+      state = backup;
+      saveState();
+      render();
+      toast('Backup recuperado de ' + date);
+    } catch (e) {
+      alert('Erro ao recuperar backup: ' + e.message);
+    }
+  }
+}
+
+function toast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 2500);
+}
+
+// ============================================
+// MAIN RENDER
+// ============================================
+function render() {
+  renderDashboard();
+  renderGantt();
+  renderTasks();
+}
+
+function applySnapshotMode() {
+  if (!isSnapshotMode) return;
+
+  // Show a banner indicating snapshot mode
+  const header = document.querySelector('.header');
+  if (header && !document.getElementById('snapshotBanner')) {
+    const banner = document.createElement('div');
+    banner.id = 'snapshotBanner';
+    banner.style.cssText = 'background: #f4f4f4; border-left: 3px solid #1a1a1a; padding: 10px 16px; margin-bottom: 24px; font-size: 12px; color: #595959; line-height: 1.6;';
+
+    let dateLabel = '';
+    if (snapshotMeta && snapshotMeta.exportedAt) {
+      const d = new Date(snapshotMeta.exportedAt);
+      dateLabel = d.toLocaleString('pt-PT', { day: '2-digit', month: 'long', year: 'numeric', hour: '2-digit', minute: '2-digit' });
+    }
+
+    banner.innerHTML = '<strong>Vista publicada</strong> ' +
+      (dateLabel ? '· Snapshot de ' + dateLabel : '') +
+      '<br>Esta é uma vista do plano publicada para consulta. Podes explorar à vontade — qualquer edição que faças fica apenas no teu browser e não afecta a versão oficial.';
+    header.parentNode.insertBefore(banner, header.nextSibling);
+  }
+
+  // Hide buttons that don't make sense in snapshot mode
+  const buttonsToHide = ['Importar', '↶ Backup', 'Reset', '↑ Publicar', '⚙'];
+  document.querySelectorAll('.actions button').forEach(btn => {
+    if (buttonsToHide.includes(btn.textContent.trim())) {
+      btn.style.display = 'none';
+    }
+  });
+  // Also hide publish status
+  const ps = document.getElementById('publishStatus');
+  if (ps) ps.style.display = 'none';
+}
+
+// ============================================
+// GITHUB PUBLISH
+// ============================================
+const GITHUB_SETTINGS_KEY = 'plano2026_github_settings';
+const GITHUB_LAST_PUBLISH_KEY = 'plano2026_last_publish';
+
+function getGitHubSettings() {
+  try {
+    const raw = localStorage.getItem(GITHUB_SETTINGS_KEY);
+    if (!raw) return null;
+    return JSON.parse(raw);
+  } catch (e) { return null; }
+}
+
+function saveGitHubSettingsToStorage(settings) {
+  localStorage.setItem(GITHUB_SETTINGS_KEY, JSON.stringify(settings));
+}
+
+function openSettingsModal() {
+  const modal = document.getElementById('settingsModal');
+  const settings = getGitHubSettings();
+  if (settings) {
+    document.getElementById('githubOwner').value = settings.owner || '';
+    document.getElementById('githubRepo').value = settings.repo || '';
+    document.getElementById('githubFile').value = settings.file || 'data.json';
+    document.getElementById('githubBranch').value = settings.branch || 'main';
+    document.getElementById('githubToken').value = settings.token || '';
+  }
+  modal.classList.add('show');
+}
+
+function closeSettingsModal() {
+  document.getElementById('settingsModal').classList.remove('show');
+}
+
+function readSettingsFromForm() {
+  return {
+    owner: document.getElementById('githubOwner').value.trim(),
+    repo: document.getElementById('githubRepo').value.trim(),
+    file: document.getElementById('githubFile').value.trim() || 'data.json',
+    branch: document.getElementById('githubBranch').value.trim() || 'main',
+    token: document.getElementById('githubToken').value.trim(),
+  };
+}
+
+function validateSettings(s) {
+  if (!s.owner) return 'Falta o utilizador GitHub.';
+  if (!s.repo) return 'Falta o nome do repositório.';
+  if (!s.file) return 'Falta o nome do ficheiro.';
+  if (!s.token) return 'Falta o token.';
+  if (!s.token.startsWith('github_pat_') && !s.token.startsWith('ghp_')) {
+    return 'O token não parece válido (deve começar por "github_pat_" ou "ghp_").';
+  }
+  return null;
+}
+
+async function testGitHubConnection() {
+  const s = readSettingsFromForm();
+  const err = validateSettings(s);
+  if (err) { alert('Configuração inválida:\n\n' + err); return; }
+
+  try {
+    // Test by fetching repo info
+    const url = `https://api.github.com/repos/${encodeURIComponent(s.owner)}/${encodeURIComponent(s.repo)}`;
+    const response = await fetch(url, {
+      headers: {
+        'Authorization': 'Bearer ' + s.token,
+        'Accept': 'application/vnd.github+json',
+      }
+    });
+
+    if (response.ok) {
+      const repo = await response.json();
+      alert(`✓ Ligação bem-sucedida.\n\nRepositório: ${repo.full_name}\nVisibilidade: ${repo.private ? 'privado' : 'público'}\nBranch padrão: ${repo.default_branch}`);
+    } else if (response.status === 404) {
+      alert('✗ Repositório não encontrado.\n\nVerifica o nome do utilizador e do repositório, ou se o token tem acesso a este repositório.');
+    } else if (response.status === 401 || response.status === 403) {
+      alert('✗ Token inválido ou sem permissões.\n\nVerifica que o token tem permissão "Contents: Read and write" para este repositório.');
+    } else {
+      alert('✗ Erro ' + response.status + ': ' + (response.statusText || 'desconhecido'));
+    }
+  } catch (e) {
+    alert('✗ Erro de ligação: ' + e.message);
+  }
+}
+
+function saveGitHubSettings() {
+  const s = readSettingsFromForm();
+  const err = validateSettings(s);
+  if (err) { alert('Configuração inválida:\n\n' + err); return; }
+  saveGitHubSettingsToStorage(s);
+  closeSettingsModal();
+  updatePublishStatus();
+  toast('Configuração guardada');
+}
+
+function updatePublishStatus() {
+  const status = document.getElementById('publishStatus');
+  const btn = document.getElementById('publishBtn');
+  if (!status || !btn) return;
+
+  const settings = getGitHubSettings();
+  if (!settings) {
+    status.textContent = 'Não configurado';
+    status.className = 'publish-status';
+    btn.disabled = true;
+    return;
+  }
+
+  btn.disabled = false;
+  const lastPublish = localStorage.getItem(GITHUB_LAST_PUBLISH_KEY);
+  if (lastPublish) {
+    const d = new Date(lastPublish);
+    const now = new Date();
+    const diffMs = now - d;
+    const diffMin = Math.floor(diffMs / 60000);
+    const diffH = Math.floor(diffMin / 60);
+    const diffD = Math.floor(diffH / 24);
+    let label;
+    if (diffMin < 1) label = 'Publicado agora';
+    else if (diffMin < 60) label = `Publicado há ${diffMin} min`;
+    else if (diffH < 24) label = `Publicado há ${diffH}h`;
+    else label = `Publicado há ${diffD} dia${diffD > 1 ? 's' : ''}`;
+    status.textContent = label;
+    status.className = 'publish-status';
+  } else {
+    status.textContent = 'Nunca publicado';
+    status.className = 'publish-status';
+  }
+}
+
+async function publishToGitHub() {
+  const settings = getGitHubSettings();
+  if (!settings) {
+    if (confirm('Ainda não configuraste a publicação GitHub.\n\nAbrir configuração agora?')) {
+      openSettingsModal();
+    }
+    return;
+  }
+
+  // Confirmation
+  const tasks = countAllTasks(state);
+  if (!confirm(`Publicar para GitHub?\n\n` +
+               `Repositório: ${settings.owner}/${settings.repo}\n` +
+               `Ficheiro: ${settings.file}\n` +
+               `Branch: ${settings.branch}\n\n` +
+               `Estado actual: ${tasks} tarefas em ${state.frentes.length} frentes.\n\n` +
+               `A versão actualmente publicada será SUBSTITUÍDA.\n` +
+               `A equipa verá esta versão nova em 1-2 minutos.`)) {
+    return;
+  }
+
+  const btn = document.getElementById('publishBtn');
+  const status = document.getElementById('publishStatus');
+  btn.disabled = true;
+  btn.classList.add('publishing');
+  btn.textContent = 'A publicar...';
+  status.textContent = '';
+
+  try {
+    // Build payload
+    const payload = {
+      _meta: {
+        app: 'plano-2026',
+        version: DATA_VERSION,
+        exportedAt: new Date().toISOString(),
+        totalTasks: tasks,
+        totalFrentes: state.frentes.length,
+      },
+      state: state,
+    };
+    const content = JSON.stringify(payload, null, 2);
+
+    // Step 1: Get current SHA of file (needed to update; not needed if creating)
+    const apiBase = `https://api.github.com/repos/${encodeURIComponent(settings.owner)}/${encodeURIComponent(settings.repo)}/contents/${encodeURIComponent(settings.file)}`;
+    const headers = {
+      'Authorization': 'Bearer ' + settings.token,
+      'Accept': 'application/vnd.github+json',
+      'Content-Type': 'application/json',
+    };
+
+    let existingSha = null;
+    try {
+      const getResp = await fetch(apiBase + '?ref=' + encodeURIComponent(settings.branch), { headers });
+      if (getResp.ok) {
+        const existing = await getResp.json();
+        existingSha = existing.sha;
+      }
+      // 404 = file doesn't exist yet, we'll create it
+    } catch (e) {
+      // ignore — try to create
+    }
+
+    // Step 2: PUT new content
+    // GitHub API requires base64-encoded content. Use a UTF-8 safe encoder.
+    const utf8Bytes = new TextEncoder().encode(content);
+    let binary = '';
+    utf8Bytes.forEach(b => { binary += String.fromCharCode(b); });
+    const base64Content = btoa(binary);
+
+    const body = {
+      message: `Update ${settings.file} — ${tasks} tasks`,
+      content: base64Content,
+      branch: settings.branch,
+    };
+    if (existingSha) body.sha = existingSha;
+
+    const putResp = await fetch(apiBase, {
+      method: 'PUT',
+      headers,
+      body: JSON.stringify(body),
+    });
+
+    if (!putResp.ok) {
+      const errBody = await putResp.json().catch(() => ({}));
+      let msg = `Erro ${putResp.status}`;
+      if (errBody.message) msg += ': ' + errBody.message;
+      if (putResp.status === 401 || putResp.status === 403) {
+        msg += '\n\nVerifica o token (Settings ⚙). Pode estar expirado ou sem permissões.';
+      } else if (putResp.status === 404) {
+        msg += '\n\nRepositório ou branch não encontrado. Verifica configuração (Settings ⚙).';
+      } else if (putResp.status === 409) {
+        msg += '\n\nConflito: o ficheiro foi alterado por outra fonte. Recarrega a página e tenta de novo.';
+      } else if (putResp.status === 422) {
+        msg += '\n\nDados inválidos enviados ao GitHub.';
+      }
+      throw new Error(msg);
+    }
+
+    const result = await putResp.json();
+
+    // Success
+    localStorage.setItem(GITHUB_LAST_PUBLISH_KEY, new Date().toISOString());
+    status.textContent = '✓ Publicado';
+    status.className = 'publish-status success';
+    toast(`Publicado · ${tasks} tarefas`);
+
+    // After 4s, revert status to relative time
+    setTimeout(updatePublishStatus, 4000);
+
+  } catch (e) {
+    console.error('Publish error:', e);
+    status.textContent = '✗ Erro';
+    status.className = 'publish-status error';
+    alert('Erro ao publicar:\n\n' + e.message);
+  } finally {
+    btn.disabled = false;
+    btn.classList.remove('publishing');
+    btn.textContent = '↑ Publicar';
+  }
+}
+
+// Update publish status every minute
+setInterval(updatePublishStatus, 60000);
+
+// Boot
+(async function() {
+  await loadState();
+  render();
+  applySnapshotMode();
+  if (!isSnapshotMode) updatePublishStatus();
+})();
+</script>
+</body>
+</html>
