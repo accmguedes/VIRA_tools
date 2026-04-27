@@ -1,0 +1,2229 @@
+{
+  "_meta": {
+    "app": "plano-2026",
+    "version": 2,
+    "exportedAt": "2026-04-27T20:37:47.287Z",
+    "totalTasks": 237,
+    "totalFrentes": 3
+  },
+  "state": {
+    "frentes": [
+      {
+        "id": "mkt",
+        "nome": "Marketing",
+        "open": true,
+        "blocos": [
+          {
+            "id": "m0",
+            "nome": "Grandes Projectos",
+            "open": false,
+            "temas": [
+              {
+                "nome": "Rentabilidade Portugal",
+                "tarefas": [
+                  {
+                    "id": "t1",
+                    "text": "Unidades com tráfego de turistas estrangeiros - Definir posicionamento e materiais de comunicação",
+                    "status": "todo",
+                    "quarter": null,
+                    "duration": 2
+                  },
+                  {
+                    "id": "t2",
+                    "text": "Foodtrucks e parcerias de revenda - Desenvolver imagem, materiais e narrativa de comunicação",
+                    "status": "todo",
+                    "quarter": null,
+                    "duration": 1
+                  },
+                  {
+                    "id": "t3",
+                    "text": "Cascais — definir e activar alavancas de comunicação local para campanha de crescimento - analisar ferramentas dentro do shopping / envolvência",
+                    "status": "todo",
+                    "quarter": null,
+                    "duration": 1
+                  },
+                  {
+                    "id": "t4",
+                    "text": "Algés — reforçar presença local da loja com foco em take-away e tráfego de proximidade - definir de embaixador local",
+                    "status": "todo",
+                    "quarter": null,
+                    "duration": 1
+                  },
+                  {
+                    "id": "t5",
+                    "text": "Oeiras — dar apoio de marketing ao processo de franchising desta unidade",
+                    "status": "todo",
+                    "quarter": null,
+                    "duration": 1
+                  }
+                ]
+              },
+              {
+                "nome": "Expansão Nacional",
+                "tarefas": [
+                  {
+                    "id": "t6",
+                    "text": "Criar conceito de comunicação para futura loja em local turístico",
+                    "status": "todo",
+                    "quarter": null,
+                    "duration": 1
+                  },
+                  {
+                    "id": "t7",
+                    "text": "Desenvolver identidade visual e modelo de comunicação para operação em carrinha",
+                    "status": "todo",
+                    "quarter": null,
+                    "duration": 1
+                  },
+                  {
+                    "id": "t8",
+                    "text": "Porto — preparar materiais e estratégia de marketing para entrada no mercado",
+                    "status": "todo",
+                    "quarter": null,
+                    "duration": 1
+                  }
+                ]
+              },
+              {
+                "nome": "Internacionalização",
+                "tarefas": [
+                  {
+                    "id": "t10",
+                    "text": "Médio Oriente — rever necessidade de adaptação de materiais à realidade local",
+                    "status": "todo",
+                    "quarter": null,
+                    "duration": 1
+                  },
+                  {
+                    "id": "t11",
+                    "text": "Aeroporto — fechar conceito de unidade e comunicação para tráfego internacional",
+                    "status": "todo",
+                    "quarter": null,
+                    "duration": 1
+                  },
+                  {
+                    "id": "t1777286070900",
+                    "text": "Flagshop - Revisão de regras de estilo para criação de Flagshop VIRA",
+                    "status": "todo",
+                    "quarter": null,
+                    "duration": 1
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "m3",
+            "nome": "1. VIRAgem 2026",
+            "open": false,
+            "temas": [
+              {
+                "nome": "Fase 2026a — Acções imediatas",
+                "tarefas": [
+                  {
+                    "id": "t48",
+                    "text": "Imprimir as rectificações das ementas - a aguardar salgados / receita V!toque / sobremesas",
+                    "status": "blocked",
+                    "quarter": null,
+                    "duration": 1
+                  },
+                  {
+                    "id": "t49",
+                    "text": "Produzir standups actualizados",
+                    "status": "blocked",
+                    "quarter": null,
+                    "duration": 1
+                  },
+                  {
+                    "id": "t51",
+                    "text": "Maquetizar e produzir standups Piri Piri",
+                    "status": "todo",
+                    "quarter": null,
+                    "duration": 1
+                  },
+                  {
+                    "id": "t50",
+                    "text": "Fechar ementas das redes sociais e Google",
+                    "status": "todo",
+                    "quarter": null,
+                    "duration": 1
+                  },
+                  {
+                    "id": "t52",
+                    "text": "Rever imagens nos ecrãs das unidades - mudanças por horário, imagens mais explicitas em termos de indicação de menu, acompanhamentos",
+                    "status": "todo",
+                    "quarter": null,
+                    "duration": 1
+                  },
+                  {
+                    "id": "t53",
+                    "text": "Rever / actualizar conteúdos da VIRApp - fechar pacote Ana + imagens",
+                    "status": "todo",
+                    "quarter": null,
+                    "duration": 1
+                  }
+                ]
+              },
+              {
+                "nome": "Fase 2026b — Vários Sabores",
+                "tarefas": [
+                  {
+                    "id": "t54",
+                    "text": "Definir formato e calendário do lançamento das sobremesas Vários Sabores",
+                    "status": "todo",
+                    "quarter": null,
+                    "duration": 1
+                  },
+                  {
+                    "id": "t55",
+                    "text": "Definir modo de integração da marca Vários Sabores no universo VIRA",
+                    "status": "todo",
+                    "quarter": null,
+                    "duration": 1
+                  },
+                  {
+                    "id": "t56",
+                    "text": "Construir sinergias do lançamento com Glovo e influencers",
+                    "status": "todo",
+                    "quarter": null,
+                    "duration": 1
+                  },
+                  {
+                    "id": "t57",
+                    "text": "Fechar calendário detalhado de lançamento",
+                    "status": "todo",
+                    "quarter": null,
+                    "duration": 1
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "m5",
+            "nome": "2. Actualização de Unidades",
+            "open": false,
+            "temas": [
+              {
+                "nome": "Auditorias",
+                "tarefas": [
+                  {
+                    "id": "t65",
+                    "text": "Auditoria visual completa Silva Carvalho + plano de actualização",
+                    "status": "done",
+                    "quarter": null,
+                    "duration": 1
+                  },
+                  {
+                    "id": "t66",
+                    "text": "Auditoria visual completa Atrium Saldanha + plano de actualização",
+                    "status": "done",
+                    "quarter": null,
+                    "duration": 1
+                  },
+                  {
+                    "id": "t67",
+                    "text": "Auditoria visual completa Algés + plano de actualização",
+                    "status": "done",
+                    "quarter": null,
+                    "duration": 1
+                  },
+                  {
+                    "id": "t68",
+                    "text": "Auditoria visual completa Cascais Shopping + plano de actualização",
+                    "status": "todo",
+                    "quarter": null,
+                    "duration": 1
+                  },
+                  {
+                    "id": "t69",
+                    "text": "Auditoria visual completa Oeiras Parque + plano de actualização",
+                    "status": "todo",
+                    "quarter": null,
+                    "duration": 1
+                  }
+                ]
+              },
+              {
+                "nome": "Geral",
+                "tarefas": [
+                  {
+                    "id": "t59",
+                    "text": "Concluir desenho final das caixas de luz - versão \"VIRA Frangos\"",
+                    "status": "todo",
+                    "quarter": null,
+                    "duration": 1
+                  }
+                ]
+              },
+              {
+                "nome": "Colaboradores",
+                "tarefas": [
+                  {
+                    "id": "t1777297557284",
+                    "text": "Fardas - rever de elementos - Catarina",
+                    "status": "todo",
+                    "quarter": null,
+                    "duration": 1
+                  },
+                  {
+                    "id": "t61",
+                    "text": "Avaliar necessidade de identificação de colaboradores - Catarina",
+                    "status": "todo",
+                    "quarter": null,
+                    "duration": 1
+                  }
+                ]
+              },
+              {
+                "nome": "Equipamento",
+                "tarefas": [
+                  {
+                    "id": "t58",
+                    "text": "Rever carimbos de sacos",
+                    "status": "todo",
+                    "quarter": null,
+                    "duration": 1
+                  },
+                  {
+                    "id": "t62",
+                    "text": "Rever / Actualizar conteúdo e imagem dos afixos de unidade",
+                    "status": "todo",
+                    "quarter": null,
+                    "duration": 1
+                  },
+                  {
+                    "id": "t63",
+                    "text": "Mudar tabuleiros para preto e adoptar toalhete kraft ?",
+                    "status": "todo",
+                    "quarter": null,
+                    "duration": 1
+                  },
+                  {
+                    "id": "t64",
+                    "text": "Rever pratos (passar a metal redondo branco - testes não convenceram) e dimensão",
+                    "status": "todo",
+                    "quarter": null,
+                    "duration": 1
+                  }
+                ]
+              },
+              {
+                "nome": "Execução",
+                "tarefas": [
+                  {
+                    "id": "t70",
+                    "text": "Orçamentar mudanças às unidades",
+                    "status": "todo",
+                    "quarter": null,
+                    "duration": 1
+                  },
+                  {
+                    "id": "t1777298206590",
+                    "text": "Calendarizar as intervenções com a equipa de Produção",
+                    "status": "todo",
+                    "quarter": null,
+                    "duration": 1
+                  },
+                  {
+                    "id": "t71",
+                    "text": "Coordenar execução com shoppings e Supervisor / Gerentes de loja",
+                    "status": "todo",
+                    "quarter": null,
+                    "duration": 1
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "m1",
+            "nome": "3. Campanhas Promocionais ( multicanal: unidade / virapp / delivery / take-away )",
+            "open": true,
+            "temas": [
+              {
+                "nome": "Bases de decisão",
+                "tarefas": [
+                  {
+                    "id": "t12",
+                    "text": "Obter tabela de food costs actualizada",
+                    "status": "done",
+                    "quarter": null,
+                    "duration": 1
+                  },
+                  {
+                    "id": "t13",
+                    "text": "Obter e analisar mix de vendas por unidade, canal, dia e hora - trabalhar xls Vanessa",
+                    "status": "doing",
+                    "quarter": null,
+                    "duration": 1
+                  },
+                  {
+                    "id": "t14",
+                    "text": "Resumir e avaliar todas as campanhas Glovo desde o início da VIRAgem - dados só fiáveis a partir de Maio",
+                    "status": "blocked",
+                    "quarter": null,
+                    "duration": 1
+                  },
+                  {
+                    "id": "t15",
+                    "text": "Analisar resultados seccionados por mecânicas promocional ( produtos x tipologia de campanha )",
+                    "status": "todo",
+                    "quarter": null,
+                    "duration": 1
+                  },
+                  {
+                    "id": "t16",
+                    "text": "Rever utilização da VIRApp em 2026 - de modo a planear próximas actualizações",
+                    "status": "todo",
+                    "quarter": null,
+                    "duration": 1
+                  }
+                ]
+              },
+              {
+                "nome": "Definição estratégica de promoções",
+                "tarefas": [
+                  {
+                    "id": "t17",
+                    "text": "Identificar produtos e promoções-chave",
+                    "status": "todo",
+                    "quarter": null,
+                    "duration": 1
+                  },
+                  {
+                    "id": "t18",
+                    "text": "Definir objectivos prioritários por campanha",
+                    "status": "todo",
+                    "quarter": null,
+                    "duration": 1
+                  },
+                  {
+                    "id": "t19",
+                    "text": "Adaptar público-alvo por canal",
+                    "status": "todo",
+                    "quarter": null,
+                    "duration": 1
+                  },
+                  {
+                    "id": "t20",
+                    "text": "Definir nova arquitectura das 4 tipologias de campanha",
+                    "status": "todo",
+                    "quarter": null,
+                    "duration": 1
+                  }
+                ]
+              },
+              {
+                "nome": "Estrutura e mecânicas",
+                "tarefas": [
+                  {
+                    "id": "t21",
+                    "text": "Criar mecânicas simples e replicáveis",
+                    "status": "todo",
+                    "quarter": null,
+                    "duration": 1
+                  },
+                  {
+                    "id": "t22",
+                    "text": "Definir tipologias de duração das campanhas",
+                    "status": "todo",
+                    "quarter": null,
+                    "duration": 1
+                  },
+                  {
+                    "id": "t23",
+                    "text": "Garantir consistência visual entre categorias",
+                    "status": "todo",
+                    "quarter": null,
+                    "duration": 1
+                  },
+                  {
+                    "id": "t24",
+                    "text": "Actualizar peças físicas e digitais",
+                    "status": "todo",
+                    "quarter": null,
+                    "duration": 1
+                  },
+                  {
+                    "id": "t25",
+                    "text": "Fechar calendário, budget e recursos por campanha",
+                    "status": "todo",
+                    "quarter": null,
+                    "duration": 1
+                  }
+                ]
+              },
+              {
+                "nome": "Avaliação",
+                "tarefas": [
+                  {
+                    "id": "t26",
+                    "text": "Definir KPIs por campanha",
+                    "status": "todo",
+                    "quarter": null,
+                    "duration": 1
+                  },
+                  {
+                    "id": "t27",
+                    "text": "Fechar ferramenta padrão de análise pós-campanha",
+                    "status": "todo",
+                    "quarter": null,
+                    "duration": 1
+                  },
+                  {
+                    "id": "t28",
+                    "text": "Criar Guia de Campanhas Vencedoras",
+                    "status": "todo",
+                    "quarter": null,
+                    "duration": 1
+                  }
+                ]
+              },
+              {
+                "nome": "Calendário e coordenação",
+                "tarefas": [
+                  {
+                    "id": "t29",
+                    "text": "Construir calendário integrado entre canais",
+                    "status": "todo",
+                    "quarter": null,
+                    "duration": 1
+                  },
+                  {
+                    "id": "t30",
+                    "text": "Definir regras de exclusividade vs sobreposição",
+                    "status": "todo",
+                    "quarter": null,
+                    "duration": 1
+                  },
+                  {
+                    "id": "t31",
+                    "text": "Definir prioridade entre canais",
+                    "status": "todo",
+                    "quarter": null,
+                    "duration": 1
+                  },
+                  {
+                    "id": "t32",
+                    "text": "Garantir clareza de proposta de valor e urgência",
+                    "status": "todo",
+                    "quarter": null,
+                    "duration": 1
+                  }
+                ]
+              },
+              {
+                "nome": "Operacional",
+                "tarefas": [
+                  {
+                    "id": "t33",
+                    "text": "Comunicar calendário às equipas das unidades",
+                    "status": "todo",
+                    "quarter": null,
+                    "duration": 1
+                  },
+                  {
+                    "id": "t34",
+                    "text": "Garantir stock e preparação antecipada",
+                    "status": "todo",
+                    "quarter": null,
+                    "duration": 1
+                  },
+                  {
+                    "id": "t35",
+                    "text": "Monitorizar campanhas em tempo real",
+                    "status": "todo",
+                    "quarter": null,
+                    "duration": 1
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "m2",
+            "nome": "4. Redes Sociais",
+            "open": false,
+            "temas": [
+              {
+                "nome": "Calendário",
+                "tarefas": [
+                  {
+                    "id": "t36",
+                    "text": "Definir de diferentes tipologias de comunicação em redes - Instagram: Promocional / Sazonal / Marca | Linkedin: Catering / Franchising",
+                    "status": "todo",
+                    "quarter": null,
+                    "duration": 1
+                  }
+                ]
+              },
+              {
+                "nome": "LinkedIn",
+                "tarefas": [
+                  {
+                    "id": "t37",
+                    "text": "Reposicionar o canal para B2B (catering e franchising) - definir lista de conteúdos",
+                    "status": "todo",
+                    "quarter": null,
+                    "duration": 1
+                  }
+                ]
+              },
+              {
+                "nome": "Instagram e Facebook — wall com marca / stories em \"Destaques\"",
+                "tarefas": [
+                  {
+                    "id": "t38",
+                    "text": "Criar secção \"Destaques\" no Instagram",
+                    "status": "todo",
+                    "quarter": null,
+                    "duration": 1
+                  },
+                  {
+                    "id": "t39",
+                    "text": "Definir capa visual do destaque",
+                    "status": "todo",
+                    "quarter": null,
+                    "duration": 1
+                  },
+                  {
+                    "id": "t40",
+                    "text": "Definir processo de adicionar e remover stories do destaque",
+                    "status": "todo",
+                    "quarter": null,
+                    "duration": 1
+                  },
+                  {
+                    "id": "t41",
+                    "text": "Comunicar aos clientes a existência do destaque",
+                    "status": "todo",
+                    "quarter": null,
+                    "duration": 1
+                  }
+                ]
+              },
+              {
+                "nome": "Instagram e Facebook — Operação regular",
+                "tarefas": [
+                  {
+                    "id": "t42",
+                    "text": "Definir budget pago por Susana e valor a associar por tipologia de campanha e fase",
+                    "status": "todo",
+                    "quarter": null,
+                    "duration": 1
+                  },
+                  {
+                    "id": "t43",
+                    "text": "Manter lógica de uso (posts permanentes vs stories temporárias)",
+                    "status": "todo",
+                    "quarter": null,
+                    "duration": 1
+                  },
+                  {
+                    "id": "t44",
+                    "text": "Sincronizar posts promocionais com semanas de influencers Glovo",
+                    "status": "todo",
+                    "quarter": null,
+                    "duration": 1
+                  },
+                  {
+                    "id": "t45",
+                    "text": "Implementar modelo buildup mensal até Influencer",
+                    "status": "todo",
+                    "quarter": null,
+                    "duration": 1
+                  },
+                  {
+                    "id": "t46",
+                    "text": "Produzir 1 campanha de Marca diferenciadora - possivelmente filme ou mecânica- por semestre",
+                    "status": "todo",
+                    "quarter": null,
+                    "duration": 1
+                  },
+                  {
+                    "id": "t1777286849521",
+                    "text": "Definição de Posts e Stories mais Promocionais - Apenas visiveis durante 15 dias - Mantem wall mais limpa e mais lifestyle",
+                    "status": "todo",
+                    "quarter": null,
+                    "duration": 1
+                  },
+                  {
+                    "id": "t1777286857168",
+                    "text": "Inserir posts sazonais no calendário anual",
+                    "status": "todo",
+                    "quarter": null,
+                    "duration": 1
+                  }
+                ]
+              },
+              {
+                "nome": "Internacional",
+                "tarefas": [
+                  {
+                    "id": "t1777297346354",
+                    "text": "Obter de endereço intagram  \"virafrangos_es\"",
+                    "status": "doing",
+                    "quarter": null,
+                    "duration": 1
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "m6",
+            "nome": "6. VIRApp",
+            "open": false,
+            "temas": [
+              {
+                "nome": "Estética e lógica",
+                "tarefas": [
+                  {
+                    "id": "t72",
+                    "text": "Rever estética da app",
+                    "status": "todo",
+                    "quarter": null,
+                    "duration": 1
+                  },
+                  {
+                    "id": "t73",
+                    "text": "Rever sistema de promoções e lógica de pontos",
+                    "status": "todo",
+                    "quarter": null,
+                    "duration": 1
+                  },
+                  {
+                    "id": "t74",
+                    "text": "Criar novas lógicas de campanhas dentro da app",
+                    "status": "todo",
+                    "quarter": null,
+                    "duration": 1
+                  }
+                ]
+              },
+              {
+                "nome": "Take-away",
+                "tarefas": [
+                  {
+                    "id": "t75",
+                    "text": "Avaliar fluxo Glovo→take-away e ementa de take-away na app",
+                    "status": "todo",
+                    "quarter": null,
+                    "duration": 1
+                  }
+                ]
+              },
+              {
+                "nome": "Adopção",
+                "tarefas": [
+                  {
+                    "id": "t76",
+                    "text": "Lançar campanha em loja para converter clientes que ainda não usam a app",
+                    "status": "todo",
+                    "quarter": null,
+                    "duration": 1
+                  },
+                  {
+                    "id": "t77",
+                    "text": "Implementar sistema de Pontos Gold",
+                    "status": "todo",
+                    "quarter": null,
+                    "duration": 1
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "m7",
+            "nome": "7. Brand",
+            "open": false,
+            "temas": [
+              {
+                "nome": "Recursos",
+                "tarefas": [
+                  {
+                    "id": "t78",
+                    "text": "Arrumar a biblioteca de recursos de marca",
+                    "status": "todo",
+                    "quarter": null,
+                    "duration": 1
+                  },
+                  {
+                    "id": "t79",
+                    "text": "Organizar galerias de imagem por utilização",
+                    "status": "todo",
+                    "quarter": null,
+                    "duration": 1
+                  },
+                  {
+                    "id": "t80",
+                    "text": "Construir biblioteca de bases de imagens AI",
+                    "status": "todo",
+                    "quarter": null,
+                    "duration": 1
+                  },
+                  {
+                    "id": "t81",
+                    "text": "Fazer backup do arquivo histórico de imagem",
+                    "status": "todo",
+                    "quarter": null,
+                    "duration": 1
+                  }
+                ]
+              },
+              {
+                "nome": "Manuais",
+                "tarefas": [
+                  {
+                    "id": "t82",
+                    "text": "Fechar manual de marca na versão essencial",
+                    "status": "todo",
+                    "quarter": null,
+                    "duration": 1
+                  },
+                  {
+                    "id": "t83",
+                    "text": "Actualizar manual conforme decisões de equipamento e packaging",
+                    "status": "todo",
+                    "quarter": null,
+                    "duration": 1
+                  },
+                  {
+                    "id": "t84",
+                    "text": "Verificar conteúdo essencial de expressão de marca",
+                    "status": "todo",
+                    "quarter": null,
+                    "duration": 1
+                  },
+                  {
+                    "id": "t85",
+                    "text": "Definir versões futuras do manual",
+                    "status": "todo",
+                    "quarter": null,
+                    "duration": 1
+                  }
+                ]
+              },
+              {
+                "nome": "Partilha com franchisados",
+                "tarefas": [
+                  {
+                    "id": "t86",
+                    "text": "Construir sistema de pastas de partilha por fase de franchising",
+                    "status": "todo",
+                    "quarter": null,
+                    "duration": 1
+                  },
+                  {
+                    "id": "t87",
+                    "text": "Definir fases de partilha",
+                    "status": "todo",
+                    "quarter": null,
+                    "duration": 1
+                  },
+                  {
+                    "id": "t88",
+                    "text": "Fechar arquivos partilháveis conforme cada fase",
+                    "status": "todo",
+                    "quarter": null,
+                    "duration": 1
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "m8",
+            "nome": "8. Apoio ao Franchising",
+            "open": false,
+            "temas": [
+              {
+                "nome": "Materiais de captação que necessitam de design mais detalhado",
+                "tarefas": [
+                  {
+                    "id": "t89",
+                    "text": "Apresentação institucional de Franchising",
+                    "status": "todo",
+                    "quarter": null,
+                    "duration": 1
+                  },
+                  {
+                    "id": "t90",
+                    "text": "Teaser de Oportunidade",
+                    "status": "todo",
+                    "quarter": null,
+                    "duration": 1
+                  },
+                  {
+                    "id": "t91",
+                    "text": "One-pager da Marca",
+                    "status": "todo",
+                    "quarter": null,
+                    "duration": 1
+                  },
+                  {
+                    "id": "t92",
+                    "text": "FAQ de Franchising em versão visual",
+                    "status": "todo",
+                    "quarter": null,
+                    "duration": 1
+                  }
+                ]
+              },
+              {
+                "nome": "Materiais de abertura",
+                "tarefas": [
+                  {
+                    "id": "t93",
+                    "text": "Kit de marketing de lançamento da unidade",
+                    "status": "todo",
+                    "quarter": null,
+                    "duration": 1
+                  },
+                  {
+                    "id": "t94",
+                    "text": "Materiais do plano de inauguração",
+                    "status": "todo",
+                    "quarter": null,
+                    "duration": 1
+                  }
+                ]
+              },
+              {
+                "nome": "Manuais",
+                "tarefas": [
+                  {
+                    "id": "t95",
+                    "text": "Componente visual e diagramação do Manual Operacional",
+                    "status": "todo",
+                    "quarter": null,
+                    "duration": 1
+                  },
+                  {
+                    "id": "t96",
+                    "text": "Componente visual e diagramação do Manual de Obra",
+                    "status": "todo",
+                    "quarter": null,
+                    "duration": 1
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "sis",
+        "nome": "Sistema",
+        "open": false,
+        "blocos": [
+          {
+            "id": "s1",
+            "nome": "Fase 1 — Definição da arquitectura",
+            "open": false,
+            "temas": [
+              {
+                "nome": "Arquitectura",
+                "tarefas": [
+                  {
+                    "id": "t97",
+                    "text": "Refazer nova definição dos 3 níveis (Hub Central, Hub Franchisado, Hub Unidade)",
+                    "status": "todo",
+                    "quarter": null,
+                    "duration": 1
+                  },
+                  {
+                    "id": "t98",
+                    "text": "Fechar a ligação entre eles",
+                    "status": "todo",
+                    "quarter": null,
+                    "duration": 1
+                  },
+                  {
+                    "id": "t1777286131031",
+                    "text": "Mapear o que é global e o que é local",
+                    "status": "todo",
+                    "quarter": null,
+                    "duration": 1
+                  },
+                  {
+                    "id": "t1777286196116",
+                    "text": "Definição de Hubs consoante linguas e sua replicação",
+                    "status": "todo",
+                    "quarter": null,
+                    "duration": 1
+                  }
+                ]
+              },
+              {
+                "nome": "Estrutura de dados",
+                "tarefas": [
+                  {
+                    "id": "t100",
+                    "text": "Definir naming fixo das bibliotecas - funcionam para todo o mundo",
+                    "status": "todo",
+                    "quarter": null,
+                    "duration": 1
+                  },
+                  {
+                    "id": "t101",
+                    "text": "Definir estrutura padrão / template",
+                    "status": "todo",
+                    "quarter": null,
+                    "duration": 1
+                  }
+                ]
+              },
+              {
+                "nome": "Regras de links",
+                "tarefas": [
+                  {
+                    "id": "t102",
+                    "text": "Proibir links absolutos para lojas específicas",
+                    "status": "todo",
+                    "quarter": null,
+                    "duration": 1
+                  },
+                  {
+                    "id": "t103",
+                    "text": "Definir padrão de links",
+                    "status": "todo",
+                    "quarter": null,
+                    "duration": 1
+                  },
+                  {
+                    "id": "t104",
+                    "text": "Definir padrão de naming",
+                    "status": "todo",
+                    "quarter": null,
+                    "duration": 1
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "s2",
+            "nome": "Fase 2 — Hub Central",
+            "open": false,
+            "temas": [
+              {
+                "nome": "Site global",
+                "tarefas": [
+                  {
+                    "id": "t105",
+                    "text": "Criar o site central no SharePoint",
+                    "status": "todo",
+                    "quarter": null,
+                    "duration": 1
+                  },
+                  {
+                    "id": "t106",
+                    "text": "Configurar navegação, branding e pesquisa",
+                    "status": "todo",
+                    "quarter": null,
+                    "duration": 1
+                  }
+                ]
+              },
+              {
+                "nome": "Bibliotecas",
+                "tarefas": [
+                  {
+                    "id": "t107",
+                    "text": "Criar bibliotecas centrais",
+                    "status": "todo",
+                    "quarter": null,
+                    "duration": 1
+                  }
+                ]
+              },
+              {
+                "nome": "Páginas de conhecimento",
+                "tarefas": [
+                  {
+                    "id": "t108",
+                    "text": "Construir página de Atendimento",
+                    "status": "todo",
+                    "quarter": null,
+                    "duration": 1
+                  },
+                  {
+                    "id": "t109",
+                    "text": "Construir página de Cozinha",
+                    "status": "todo",
+                    "quarter": null,
+                    "duration": 1
+                  },
+                  {
+                    "id": "t110",
+                    "text": "Construir página de HSA",
+                    "status": "todo",
+                    "quarter": null,
+                    "duration": 1
+                  },
+                  {
+                    "id": "t111",
+                    "text": "Construir página de Finance",
+                    "status": "todo",
+                    "quarter": null,
+                    "duration": 1
+                  },
+                  {
+                    "id": "t112",
+                    "text": "Construir página de Obra",
+                    "status": "todo",
+                    "quarter": null,
+                    "duration": 1
+                  },
+                  {
+                    "id": "t113",
+                    "text": "Construir página de Abertura de Loja",
+                    "status": "todo",
+                    "quarter": null,
+                    "duration": 1
+                  }
+                ]
+              },
+              {
+                "nome": "Conteúdo para Copilot",
+                "tarefas": [
+                  {
+                    "id": "t114",
+                    "text": "Limpar conteúdos duplicados e simplificar textos",
+                    "status": "todo",
+                    "quarter": null,
+                    "duration": 1
+                  },
+                  {
+                    "id": "t115",
+                    "text": "Aplicar metadata e títulos claros",
+                    "status": "todo",
+                    "quarter": null,
+                    "duration": 1
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "s3",
+            "nome": "Fase 3 — Hub Franchisado",
+            "open": false,
+            "temas": [
+              {
+                "nome": "Portal",
+                "tarefas": [
+                  {
+                    "id": "t116",
+                    "text": "Construir Home com KPIs, Acções, Alertas e Copilot",
+                    "status": "todo",
+                    "quarter": null,
+                    "duration": 1
+                  }
+                ]
+              },
+              {
+                "nome": "Blocos",
+                "tarefas": [
+                  {
+                    "id": "t117",
+                    "text": "Construir blocos: Franchising, Aberturas, Finance, People, Marketing, Supply, Unit Performance",
+                    "status": "todo",
+                    "quarter": null,
+                    "duration": 1
+                  }
+                ]
+              },
+              {
+                "nome": "Ferramentas",
+                "tarefas": [
+                  {
+                    "id": "t118",
+                    "text": "Implementar dashboards em Power BI",
+                    "status": "todo",
+                    "quarter": null,
+                    "duration": 1
+                  },
+                  {
+                    "id": "t119",
+                    "text": "Criar lista \"Pipeline Franchising\"",
+                    "status": "todo",
+                    "quarter": null,
+                    "duration": 1
+                  },
+                  {
+                    "id": "t120",
+                    "text": "Criar lista \"Abertura de Lojas\"",
+                    "status": "todo",
+                    "quarter": null,
+                    "duration": 1
+                  },
+                  {
+                    "id": "t121",
+                    "text": "Construir bibliotecas para os 11 packs documentais",
+                    "status": "todo",
+                    "quarter": null,
+                    "duration": 1
+                  }
+                ]
+              },
+              {
+                "nome": "Copilot",
+                "tarefas": [
+                  {
+                    "id": "t122",
+                    "text": "Adicionar agente Copilot e configurar prompts",
+                    "status": "todo",
+                    "quarter": null,
+                    "duration": 1
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "s4",
+            "nome": "Fase 4 — Hub Unidade",
+            "open": false,
+            "temas": [
+              {
+                "nome": "Portal",
+                "tarefas": [
+                  {
+                    "id": "t123",
+                    "text": "Construir Home com acções frequentes, Copilot e alertas",
+                    "status": "todo",
+                    "quarter": null,
+                    "duration": 1
+                  }
+                ]
+              },
+              {
+                "nome": "Blocos",
+                "tarefas": [
+                  {
+                    "id": "t124",
+                    "text": "Construir blocos: Atendimento, Cozinha, Limpeza, Mercadoria, People, Segurança",
+                    "status": "todo",
+                    "quarter": null,
+                    "duration": 1
+                  }
+                ]
+              },
+              {
+                "nome": "Cards operacionais",
+                "tarefas": [
+                  {
+                    "id": "t125",
+                    "text": "Criar cards (abrir horário, ver inventário, registar reclamação, ver auditoria)",
+                    "status": "todo",
+                    "quarter": null,
+                    "duration": 1
+                  }
+                ]
+              },
+              {
+                "nome": "Dados locais",
+                "tarefas": [
+                  {
+                    "id": "t126",
+                    "text": "Configurar webparts de Document Library",
+                    "status": "todo",
+                    "quarter": null,
+                    "duration": 1
+                  },
+                  {
+                    "id": "t127",
+                    "text": "Configurar Highlighted Content",
+                    "status": "todo",
+                    "quarter": null,
+                    "duration": 1
+                  },
+                  {
+                    "id": "t128",
+                    "text": "Criar listas locais",
+                    "status": "todo",
+                    "quarter": null,
+                    "duration": 1
+                  }
+                ]
+              },
+              {
+                "nome": "Conhecimento global",
+                "tarefas": [
+                  {
+                    "id": "t129",
+                    "text": "Configurar links para Hub Central",
+                    "status": "todo",
+                    "quarter": null,
+                    "duration": 1
+                  }
+                ]
+              },
+              {
+                "nome": "Copilot",
+                "tarefas": [
+                  {
+                    "id": "t130",
+                    "text": "Embed do agente Copilot e prompts",
+                    "status": "todo",
+                    "quarter": null,
+                    "duration": 1
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "s5",
+            "nome": "Fase 5 — Template de Loja",
+            "open": true,
+            "temas": [
+              {
+                "nome": "Site modelo",
+                "tarefas": [
+                  {
+                    "id": "t131",
+                    "text": "Criar site base, associar ao Hub e configurar Home",
+                    "status": "todo",
+                    "quarter": null,
+                    "duration": 1
+                  }
+                ]
+              },
+              {
+                "nome": "Estrutura de dados",
+                "tarefas": [
+                  {
+                    "id": "t132",
+                    "text": "Criar bibliotecas, pastas vazias e listas base",
+                    "status": "todo",
+                    "quarter": null,
+                    "duration": 1
+                  }
+                ]
+              },
+              {
+                "nome": "Webparts",
+                "tarefas": [
+                  {
+                    "id": "t133",
+                    "text": "Configurar webparts dinâmicas",
+                    "status": "todo",
+                    "quarter": null,
+                    "duration": 1
+                  }
+                ]
+              },
+              {
+                "nome": "Links",
+                "tarefas": [
+                  {
+                    "id": "t134",
+                    "text": "Configurar links relativos",
+                    "status": "todo",
+                    "quarter": null,
+                    "duration": 1
+                  }
+                ]
+              },
+              {
+                "nome": "Copilot",
+                "tarefas": [
+                  {
+                    "id": "t135",
+                    "text": "Embed do agente Copilot e validar funcionamento",
+                    "status": "todo",
+                    "quarter": null,
+                    "duration": 1
+                  }
+                ]
+              },
+              {
+                "nome": "Reutilização",
+                "tarefas": [
+                  {
+                    "id": "t136",
+                    "text": "Exportar como Site Template e testar replicação",
+                    "status": "todo",
+                    "quarter": null,
+                    "duration": 1
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "s6",
+            "nome": "Fase 6 — Copilot Central",
+            "open": false,
+            "temas": [
+              {
+                "nome": "Configuração",
+                "tarefas": [
+                  {
+                    "id": "t137",
+                    "text": "Criar Operations Assistant no Copilot Studio",
+                    "status": "todo",
+                    "quarter": null,
+                    "duration": 1
+                  },
+                  {
+                    "id": "t138",
+                    "text": "Configurar Hub Central como fonte",
+                    "status": "todo",
+                    "quarter": null,
+                    "duration": 1
+                  },
+                  {
+                    "id": "t139",
+                    "text": "Criar prompts para Abertura, Operação, HSA e Atendimento",
+                    "status": "todo",
+                    "quarter": null,
+                    "duration": 1
+                  },
+                  {
+                    "id": "t140",
+                    "text": "Integrar agente nos Hubs Franchisado, Unidade e Templates",
+                    "status": "todo",
+                    "quarter": null,
+                    "duration": 1
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "s7",
+            "nome": "Fase 7 — Processo de criação de loja",
+            "open": false,
+            "temas": [
+              {
+                "nome": "Implementação",
+                "tarefas": [
+                  {
+                    "id": "t141",
+                    "text": "Criar checklist de criação",
+                    "status": "todo",
+                    "quarter": null,
+                    "duration": 1
+                  },
+                  {
+                    "id": "t142",
+                    "text": "Validar bibliotecas, listas e links",
+                    "status": "todo",
+                    "quarter": null,
+                    "duration": 1
+                  },
+                  {
+                    "id": "t143",
+                    "text": "Preencher dados locais iniciais",
+                    "status": "todo",
+                    "quarter": null,
+                    "duration": 1
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "s8",
+            "nome": "Fase 8 — UX",
+            "open": false,
+            "temas": [
+              {
+                "nome": "Regras",
+                "tarefas": [
+                  {
+                    "id": "t144",
+                    "text": "Aplicar regras: 1 página principal, 1 nível profundidade, 5 cards por área",
+                    "status": "todo",
+                    "quarter": null,
+                    "duration": 1
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "s9",
+            "nome": "Fase 9 — Monitorização",
+            "open": false,
+            "temas": [
+              {
+                "nome": "Métricas",
+                "tarefas": [
+                  {
+                    "id": "t145",
+                    "text": "Medir uso de páginas e ferramentas",
+                    "status": "todo",
+                    "quarter": null,
+                    "duration": 1
+                  },
+                  {
+                    "id": "t146",
+                    "text": "Identificar conteúdos não utilizados",
+                    "status": "todo",
+                    "quarter": null,
+                    "duration": 1
+                  },
+                  {
+                    "id": "t147",
+                    "text": "Ajustar Home e estrutura com base em dados",
+                    "status": "todo",
+                    "quarter": null,
+                    "duration": 1
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "fra",
+        "nome": "Franchising",
+        "open": false,
+        "blocos": [
+          {
+            "id": "f0",
+            "nome": "Fase 0 — Geração de Leads",
+            "open": false,
+            "temas": [
+              {
+                "nome": "Pack de Captação",
+                "tarefas": [
+                  {
+                    "id": "t148",
+                    "text": "Produzir Apresentação de Franchising (deck institucional)",
+                    "status": "todo",
+                    "quarter": null,
+                    "duration": 1
+                  },
+                  {
+                    "id": "t149",
+                    "text": "Produzir Teaser de Franchising",
+                    "status": "todo",
+                    "quarter": null,
+                    "duration": 1
+                  },
+                  {
+                    "id": "t150",
+                    "text": "Produzir One-pager da Oportunidade",
+                    "status": "todo",
+                    "quarter": null,
+                    "duration": 1
+                  },
+                  {
+                    "id": "t151",
+                    "text": "Criar Formulário de Contacto Inicial",
+                    "status": "todo",
+                    "quarter": null,
+                    "duration": 1
+                  },
+                  {
+                    "id": "t152",
+                    "text": "Definir Perfil do Franchisado Ideal",
+                    "status": "todo",
+                    "quarter": null,
+                    "duration": 1
+                  },
+                  {
+                    "id": "t153",
+                    "text": "Produzir FAQ de Franchising",
+                    "status": "todo",
+                    "quarter": null,
+                    "duration": 1
+                  },
+                  {
+                    "id": "t154",
+                    "text": "Implementar CRM de Franchising",
+                    "status": "todo",
+                    "quarter": null,
+                    "duration": 1
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "f1",
+            "nome": "Fase 1 — Triagem Inicial",
+            "open": false,
+            "temas": [
+              {
+                "nome": "Pack de Pré-Qualificação",
+                "tarefas": [
+                  {
+                    "id": "t155",
+                    "text": "Criar Formulário de Candidatura",
+                    "status": "todo",
+                    "quarter": null,
+                    "duration": 1
+                  },
+                  {
+                    "id": "t156",
+                    "text": "Criar Checklist de Elegibilidade",
+                    "status": "todo",
+                    "quarter": null,
+                    "duration": 1
+                  },
+                  {
+                    "id": "t157",
+                    "text": "Criar Matriz de Triagem",
+                    "status": "todo",
+                    "quarter": null,
+                    "duration": 1
+                  },
+                  {
+                    "id": "t158",
+                    "text": "Criar Scorecard do Candidato",
+                    "status": "todo",
+                    "quarter": null,
+                    "duration": 1
+                  },
+                  {
+                    "id": "t159",
+                    "text": "Criar Matriz de Red Flags",
+                    "status": "todo",
+                    "quarter": null,
+                    "duration": 1
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "f2",
+            "nome": "Fase 2 — Qualificação Comercial e NDA",
+            "open": false,
+            "temas": [
+              {
+                "nome": "Pack de Qualificação",
+                "tarefas": [
+                  {
+                    "id": "t160",
+                    "text": "Produzir Acordo de Confidencialidade (NDA)",
+                    "status": "todo",
+                    "quarter": null,
+                    "duration": 1
+                  },
+                  {
+                    "id": "t161",
+                    "text": "Produzir E-mail Template de Envio",
+                    "status": "todo",
+                    "quarter": null,
+                    "duration": 1
+                  },
+                  {
+                    "id": "t162",
+                    "text": "Criar Registo Documental do Candidato",
+                    "status": "todo",
+                    "quarter": null,
+                    "duration": 1
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "f3",
+            "nome": "Fase 3 — Entrevistas",
+            "open": false,
+            "temas": [
+              {
+                "nome": "Pack de Avaliação",
+                "tarefas": [
+                  {
+                    "id": "t163",
+                    "text": "Produzir Guião da 1.ª Entrevista",
+                    "status": "todo",
+                    "quarter": null,
+                    "duration": 1
+                  },
+                  {
+                    "id": "t164",
+                    "text": "Produzir Ficha de Avaliação de Entrevista",
+                    "status": "todo",
+                    "quarter": null,
+                    "duration": 1
+                  },
+                  {
+                    "id": "t165",
+                    "text": "Produzir Guião da 2.ª Entrevista",
+                    "status": "todo",
+                    "quarter": null,
+                    "duration": 1
+                  },
+                  {
+                    "id": "t166",
+                    "text": "Produzir Relatório Final do Candidato",
+                    "status": "todo",
+                    "quarter": null,
+                    "duration": 1
+                  },
+                  {
+                    "id": "t167",
+                    "text": "Produzir Perfil do Responsável Operacional",
+                    "status": "todo",
+                    "quarter": null,
+                    "duration": 1
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "f4",
+            "nome": "Fase 4 — Plano de Negócio e DD",
+            "open": false,
+            "temas": [
+              {
+                "nome": "Pack de Due Diligence",
+                "tarefas": [
+                  {
+                    "id": "t168",
+                    "text": "Produzir Template de Plano de Negócio",
+                    "status": "todo",
+                    "quarter": null,
+                    "duration": 1
+                  },
+                  {
+                    "id": "t169",
+                    "text": "Produzir Modelo Financeiro",
+                    "status": "todo",
+                    "quarter": null,
+                    "duration": 1
+                  },
+                  {
+                    "id": "t170",
+                    "text": "Produzir Plano de Abertura a 5 Anos",
+                    "status": "todo",
+                    "quarter": null,
+                    "duration": 1
+                  },
+                  {
+                    "id": "t171",
+                    "text": "Produzir Plano de Reinvestimento (capex)",
+                    "status": "todo",
+                    "quarter": null,
+                    "duration": 1
+                  },
+                  {
+                    "id": "t172",
+                    "text": "Produzir Plano de Marketing (template)",
+                    "status": "todo",
+                    "quarter": null,
+                    "duration": 1
+                  },
+                  {
+                    "id": "t173",
+                    "text": "Produzir Plano Tecnológico",
+                    "status": "todo",
+                    "quarter": null,
+                    "duration": 1
+                  },
+                  {
+                    "id": "t174",
+                    "text": "Produzir Checklist de Due Diligence",
+                    "status": "todo",
+                    "quarter": null,
+                    "duration": 1
+                  },
+                  {
+                    "id": "t175",
+                    "text": "Produzir Relatório de Due Diligence",
+                    "status": "todo",
+                    "quarter": null,
+                    "duration": 1
+                  },
+                  {
+                    "id": "t176",
+                    "text": "Produzir Relatório de Visita à Empresa",
+                    "status": "todo",
+                    "quarter": null,
+                    "duration": 1
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "f5",
+            "nome": "Fase 5 — Aprovação e Contrato",
+            "open": false,
+            "temas": [
+              {
+                "nome": "Pack de Aprovação",
+                "tarefas": [
+                  {
+                    "id": "t177",
+                    "text": "Produzir Memorando de Aprovação Interna",
+                    "status": "todo",
+                    "quarter": null,
+                    "duration": 1
+                  },
+                  {
+                    "id": "t178",
+                    "text": "Produzir Contrato de Franchising Condicionado",
+                    "status": "todo",
+                    "quarter": null,
+                    "duration": 1
+                  },
+                  {
+                    "id": "t179",
+                    "text": "Produzir Resumo Executivo do Contrato",
+                    "status": "todo",
+                    "quarter": null,
+                    "duration": 1
+                  },
+                  {
+                    "id": "t180",
+                    "text": "Produzir Tabela de Fees e Encargos",
+                    "status": "todo",
+                    "quarter": null,
+                    "duration": 1
+                  },
+                  {
+                    "id": "t181",
+                    "text": "Produzir Checklist de Condições Precedentes",
+                    "status": "todo",
+                    "quarter": null,
+                    "duration": 1
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "f6",
+            "nome": "Fase 6 — Formação",
+            "open": false,
+            "temas": [
+              {
+                "nome": "Pack de Formação",
+                "tarefas": [
+                  {
+                    "id": "t182",
+                    "text": "Produzir Programa de Formação",
+                    "status": "todo",
+                    "quarter": null,
+                    "duration": 1
+                  },
+                  {
+                    "id": "t183",
+                    "text": "Produzir Plano Curricular",
+                    "status": "todo",
+                    "quarter": null,
+                    "duration": 1
+                  },
+                  {
+                    "id": "t184",
+                    "text": "Produzir Calendário de Formação",
+                    "status": "todo",
+                    "quarter": null,
+                    "duration": 1
+                  },
+                  {
+                    "id": "t185",
+                    "text": "Produzir Manual Operacional",
+                    "status": "todo",
+                    "quarter": null,
+                    "duration": 1
+                  },
+                  {
+                    "id": "t186",
+                    "text": "Produzir Relatório de Formação",
+                    "status": "todo",
+                    "quarter": null,
+                    "duration": 1
+                  },
+                  {
+                    "id": "t187",
+                    "text": "Produzir Grelha de Avaliação de Competências",
+                    "status": "todo",
+                    "quarter": null,
+                    "duration": 1
+                  },
+                  {
+                    "id": "t188",
+                    "text": "Produzir Certificação Final",
+                    "status": "todo",
+                    "quarter": null,
+                    "duration": 1
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "f7",
+            "nome": "Fase 7 — Abertura de Mercado",
+            "open": false,
+            "temas": [
+              {
+                "nome": "Pack de Abertura",
+                "tarefas": [
+                  {
+                    "id": "t189",
+                    "text": "Produzir One-pager de Abertura de Mercado",
+                    "status": "todo",
+                    "quarter": null,
+                    "duration": 1
+                  },
+                  {
+                    "id": "t190",
+                    "text": "Produzir Plano de Projecto",
+                    "status": "todo",
+                    "quarter": null,
+                    "duration": 1
+                  },
+                  {
+                    "id": "t191",
+                    "text": "Produzir Perfil de Unidade",
+                    "status": "todo",
+                    "quarter": null,
+                    "duration": 1
+                  },
+                  {
+                    "id": "t192",
+                    "text": "Produzir Relatório de Selecção de Espaço",
+                    "status": "todo",
+                    "quarter": null,
+                    "duration": 1
+                  },
+                  {
+                    "id": "t193",
+                    "text": "Produzir Proposta de Ementa",
+                    "status": "todo",
+                    "quarter": null,
+                    "duration": 1
+                  },
+                  {
+                    "id": "t194",
+                    "text": "Produzir Relatório Final de Definição de Ementa",
+                    "status": "todo",
+                    "quarter": null,
+                    "duration": 1
+                  },
+                  {
+                    "id": "t195",
+                    "text": "Produzir Guia de Requisitos de Produto",
+                    "status": "todo",
+                    "quarter": null,
+                    "duration": 1
+                  },
+                  {
+                    "id": "t196",
+                    "text": "Produzir Guia de Equipamentos e Utensílios",
+                    "status": "todo",
+                    "quarter": null,
+                    "duration": 1
+                  },
+                  {
+                    "id": "t197",
+                    "text": "Produzir Checklist Documental de Fornecedores",
+                    "status": "todo",
+                    "quarter": null,
+                    "duration": 1
+                  },
+                  {
+                    "id": "t198",
+                    "text": "Produzir Questionário de Fornecedor",
+                    "status": "todo",
+                    "quarter": null,
+                    "duration": 1
+                  },
+                  {
+                    "id": "t199",
+                    "text": "Produzir Checklist de Auditoria a Fornecedores",
+                    "status": "todo",
+                    "quarter": null,
+                    "duration": 1
+                  },
+                  {
+                    "id": "t200",
+                    "text": "Produzir Relatório de Avaliação de Fornecedor",
+                    "status": "todo",
+                    "quarter": null,
+                    "duration": 1
+                  },
+                  {
+                    "id": "t201",
+                    "text": "Produzir Manual de Obra",
+                    "status": "todo",
+                    "quarter": null,
+                    "duration": 1
+                  },
+                  {
+                    "id": "t202",
+                    "text": "Produzir Guia de Implementação de Ferramentas",
+                    "status": "todo",
+                    "quarter": null,
+                    "duration": 1
+                  },
+                  {
+                    "id": "t203",
+                    "text": "Produzir Guia de Recrutamento",
+                    "status": "todo",
+                    "quarter": null,
+                    "duration": 1
+                  },
+                  {
+                    "id": "t204",
+                    "text": "Produzir Guião de Entrevista para contratação",
+                    "status": "todo",
+                    "quarter": null,
+                    "duration": 1
+                  },
+                  {
+                    "id": "t205",
+                    "text": "Produzir Plano de Formação da Equipa de Loja",
+                    "status": "todo",
+                    "quarter": null,
+                    "duration": 1
+                  },
+                  {
+                    "id": "t206",
+                    "text": "Produzir Guia de Requisitos de Serviços Externos",
+                    "status": "todo",
+                    "quarter": null,
+                    "duration": 1
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "f8",
+            "nome": "Fase 8 — Abertura da 1.ª Unidade",
+            "open": false,
+            "temas": [
+              {
+                "nome": "Pack de Abertura de Unidade",
+                "tarefas": [
+                  {
+                    "id": "t207",
+                    "text": "Produzir Checklist de Pré-Abertura",
+                    "status": "todo",
+                    "quarter": null,
+                    "duration": 1
+                  },
+                  {
+                    "id": "t208",
+                    "text": "Produzir Plano de Soft Opening",
+                    "status": "todo",
+                    "quarter": null,
+                    "duration": 1
+                  },
+                  {
+                    "id": "t209",
+                    "text": "Produzir Plano de Inauguração",
+                    "status": "todo",
+                    "quarter": null,
+                    "duration": 1
+                  },
+                  {
+                    "id": "t210",
+                    "text": "Produzir Plano de Activação Local",
+                    "status": "todo",
+                    "quarter": null,
+                    "duration": 1
+                  },
+                  {
+                    "id": "t211",
+                    "text": "Produzir Plano de Start Team",
+                    "status": "todo",
+                    "quarter": null,
+                    "duration": 1
+                  },
+                  {
+                    "id": "t212",
+                    "text": "Produzir Cronograma de Abertura",
+                    "status": "todo",
+                    "quarter": null,
+                    "duration": 1
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "f9",
+            "nome": "Fase 9 — Gestão e Desenvolvimento",
+            "open": false,
+            "temas": [
+              {
+                "nome": "Pack de Gestão Operacional",
+                "tarefas": [
+                  {
+                    "id": "t213",
+                    "text": "Produzir Dashboard de KPI",
+                    "status": "todo",
+                    "quarter": null,
+                    "duration": 1
+                  },
+                  {
+                    "id": "t214",
+                    "text": "Produzir Registo de Controlo Diário",
+                    "status": "todo",
+                    "quarter": null,
+                    "duration": 1
+                  },
+                  {
+                    "id": "t215",
+                    "text": "Produzir Registo de Desperdícios",
+                    "status": "todo",
+                    "quarter": null,
+                    "duration": 1
+                  },
+                  {
+                    "id": "t216",
+                    "text": "Produzir Registo de Inventário",
+                    "status": "todo",
+                    "quarter": null,
+                    "duration": 1
+                  },
+                  {
+                    "id": "t217",
+                    "text": "Produzir Mapa de Exploração (P&L)",
+                    "status": "todo",
+                    "quarter": null,
+                    "duration": 1
+                  },
+                  {
+                    "id": "t218",
+                    "text": "Produzir Auditoria QPS",
+                    "status": "todo",
+                    "quarter": null,
+                    "duration": 1
+                  },
+                  {
+                    "id": "t219",
+                    "text": "Produzir Auditoria de Caixa",
+                    "status": "todo",
+                    "quarter": null,
+                    "duration": 1
+                  },
+                  {
+                    "id": "t220",
+                    "text": "Produzir Auditoria de Cofre",
+                    "status": "todo",
+                    "quarter": null,
+                    "duration": 1
+                  },
+                  {
+                    "id": "t221",
+                    "text": "Produzir Relatório de Gestão",
+                    "status": "todo",
+                    "quarter": null,
+                    "duration": 1
+                  },
+                  {
+                    "id": "t222",
+                    "text": "Produzir Calendário Promocional Local",
+                    "status": "todo",
+                    "quarter": null,
+                    "duration": 1
+                  },
+                  {
+                    "id": "t223",
+                    "text": "Produzir Plano de Refresh",
+                    "status": "todo",
+                    "quarter": null,
+                    "duration": 1
+                  },
+                  {
+                    "id": "t224",
+                    "text": "Produzir Auditoria de Cliente Mistério",
+                    "status": "todo",
+                    "quarter": null,
+                    "duration": 1
+                  },
+                  {
+                    "id": "t225",
+                    "text": "Produzir Auditoria de Higiene e Segurança Alimentar",
+                    "status": "todo",
+                    "quarter": null,
+                    "duration": 1
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "f10",
+            "nome": "Fase 10 — Performance Review",
+            "open": false,
+            "temas": [
+              {
+                "nome": "Pack de Revisão Anual",
+                "tarefas": [
+                  {
+                    "id": "t226",
+                    "text": "Produzir Cronograma de Revisão Anual",
+                    "status": "todo",
+                    "quarter": null,
+                    "duration": 1
+                  },
+                  {
+                    "id": "t227",
+                    "text": "Produzir Template de Revisão Anual",
+                    "status": "todo",
+                    "quarter": null,
+                    "duration": 1
+                  },
+                  {
+                    "id": "t228",
+                    "text": "Produzir Scorecard de Performance",
+                    "status": "todo",
+                    "quarter": null,
+                    "duration": 1
+                  },
+                  {
+                    "id": "t229",
+                    "text": "Produzir Matriz de Classificação",
+                    "status": "todo",
+                    "quarter": null,
+                    "duration": 1
+                  },
+                  {
+                    "id": "t230",
+                    "text": "Produzir Relatório Final de Performance Review",
+                    "status": "todo",
+                    "quarter": null,
+                    "duration": 1
+                  },
+                  {
+                    "id": "t231",
+                    "text": "Produzir Plano de Acção Correctiva",
+                    "status": "todo",
+                    "quarter": null,
+                    "duration": 1
+                  },
+                  {
+                    "id": "t232",
+                    "text": "Produzir Matriz de Expansibilidade",
+                    "status": "todo",
+                    "quarter": null,
+                    "duration": 1
+                  },
+                  {
+                    "id": "t233",
+                    "text": "Produzir Plano Anual de Negócio",
+                    "status": "todo",
+                    "quarter": null,
+                    "duration": 1
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}
