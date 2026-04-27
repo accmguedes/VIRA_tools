@@ -2,7 +2,7 @@
   "_meta": {
     "app": "plano-2026",
     "version": 2,
-    "exportedAt": "2026-04-27T20:37:47.287Z",
+    "exportedAt": "2026-04-27T20:54:15.275Z",
     "totalTasks": 237,
     "totalFrentes": 3
   },
@@ -10,8 +10,8 @@
     "frentes": [
       {
         "id": "mkt",
-        "nome": "Marketing",
-        "open": true,
+        "nome": "Marketings",
+        "open": false,
         "blocos": [
           {
             "id": "m0",
